@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Parallax } from 'react-parallax';
 import Board from './components/board';
 
 const App: React.FC = () => {
     return (
+        
         <div className="App">
+            <MyComponent></MyComponent>
             <div className="game">
                 <div className="game-board">
                     <Board />
@@ -32,5 +35,42 @@ const App: React.FC = () => {
         </div>
     );
 }
+
+const MyComponent: React.FC = () => {
+    return (
+        <div>
+            <Parallax
+            
+                blur={{ min: -15, max: 15 }}
+                bgImage={require('./assets/squirel.jpeg')}
+                bgImageAlt="the dog"
+                strength={-200}
+            >
+            <div style={{ height: '200px', display:'flex', justifyContent: 'center', alignItems: 'center' }}> 
+            <div>test</div> 
+            </div>
+            </Parallax>
+{/* 
+            <Parallax
+                bgImage={'./assets/squirel.jpeg'}
+                strength={400}
+                renderLayer={percentage => (
+                    <div
+                        style={{
+                            position: 'absolute',
+                            background: `rgba(255, 125, 0, ${percentage * 1})`,
+                            left: '50%',
+                            top: '50%',
+                            width: percentage * 500,
+                            height: percentage * 500,
+                        }}
+                    />
+                )}
+            >
+                <p>... Content</p>
+            </Parallax> */}
+        </div>
+    )
+};
 
 export default App;
