@@ -9,7 +9,7 @@ const WelcomeModule: React.FC = () => {
             <Parallax
                 className="welcome-module-parallax"
                 contentClassName="welcome-module-content"
-                bgImage={require('./squirel.jpeg')}
+                bgImage={require('./back1.jpg')}
                 bgImageAlt="the dog"
                 strength={300}
             >
