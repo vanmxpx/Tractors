@@ -15,6 +15,8 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="%PUBLIC_URL%/js/jquery.min.js"></script>
+    <script src="%PUBLIC_URL%/js/jquery.rd-navbar.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -40,4 +42,40 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+      
+/**
+ * @module       RD Navbar
+ * @description  Enables RD Navbar Plugin
+ */
+(function ($) {
+    var o = $('.rd-navbar');
+    if (o.length > 0) {
+        $(document).ready(function () {
+            o.RDNavbar({
+                stuckWidth: 768,
+                stuckMorph: true,
+                stuckLayout: "rd-navbar-static",
+                responsive: {
+                    0: {
+                        layout: 'rd-navbar-fixed',
+                        focusOnHover: false
+                    },
+                    768: {
+                        layout: 'rd-navbar-fullwidth'
+                    },
+                    1200: {
+                        layout: o.attr("data-rd-navbar-lg").split(" ")[0],
+                    }
+                },
+                onepage: {
+                    enable: false,
+                    offset: 0,
+                    speed: 400
+                }
+            });
+        });
+    }
+    })(jQuery);
+  </script>
 </html>

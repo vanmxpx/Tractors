@@ -2,7 +2,6 @@ import React from 'react'
 import './menu.scss';
 
 interface MenuState { 
-    squares: string[]
     xIsNext: boolean,
     winner: string | null
 }
@@ -10,9 +9,8 @@ interface MenuProps extends React.Props<any> {
     value: string,
     onClick: () => void
 };
-export default class Board extends React.Component<MenuProps, MenuState> {
+export default class Menu extends React.Component<MenuProps, MenuState> {
     state: MenuState = { 
-        squares: Array(9).fill(null),
         xIsNext: true,
         winner: null
     }
@@ -21,88 +19,129 @@ export default class Board extends React.Component<MenuProps, MenuState> {
         if (this.state.winner) {
             return;
         }
-        const squares = this.state.squares.slice();
-        squares[i] = this.nextPlayerSymbol();
-        const winner = this.calculateWinner(squares);
-        this.setState({ 
-            squares: squares, 
-            xIsNext: !this.state.xIsNext, 
-            winner: winner 
-        });
     }
 
     nextPlayerSymbol(): string {
         return this.state.xIsNext ? 'X' : 'O';
     }
 
-    calculateWinner(squares: string[]): string | null {
-        const lines = [
-          [0, 1, 2],
-          [3, 4, 5],
-          [6, 7, 8],
-          [0, 3, 6],
-          [1, 4, 7],
-          [2, 5, 8],
-          [0, 4, 8],
-          [2, 4, 6],
-        ];
-        for (let i = 0; i < lines.length; i++) {
-          const [a, b, c] = lines[i];
-          if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-            return squares[a];
-          }
-        }
-        return null;
-    }
     
     render() {
-        
-        let status;
-        if (this.state.winner) {
-            status = 'Winner: ' + this.state.winner;
-        } else {
-            status = `Next Player: ${this.nextPlayerSymbol()}`;
-        }
 
         return (
-            <div>
-                <div className="status">{status}</div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
-            </div>
+            <header className="App-header">
+                {/* style="<?php if(isset($disable_menu)){ echo 'display: none';}?>" */}
+                <div className="rd-navbar-wrap" ></div>
+                <nav className="rd-navbar" data-rd-navbar-lg="rd-navbar-fixed">
+                    <div className="rd-navbar-inner">
+
+                        <div className="rd-navbar-panel">
+
+                            <button className="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar"><span></span></button>
+
+
+                            <div className="rd-navbar-brand">
+
+                                    <span className="icon icon-md icon-primary icon-primary-variant-1">
+                                        <img src="<?=$logo?>"  alt=""></img>
+                                    </span>
+
+                            </div>
+
+                        </div>
+
+                        <div className="rd-navbar-nav-wrap">
+
+                            <ul className="rd-navbar-nav">
+                                <li>
+                                    <a href="#intro">
+                                        intro
+                                        {/* <span><?=$menu[0]?></span> */}
+                                    </a>
+                                </li>
+
+                                {/* <?php if($utm_content === 'mototraktor_kupit_v2'): ?>
+                                <? endif; ?> */}
+                                <li>
+                                    <a href="#vidos">
+                                        vidos
+                                        {/* <span><?=$menu[2]?></span> */}
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#information">
+                                        information
+                                        {/* <span><?=$menu[1]?></span> */}
+                                    </a>
+                                </li>
+
+                                {/* <?php if($utm_content === 'mototraktor_kupit_v2'): ?>
+                                <? endif; ?> */}
+                                <li>
+                                    <a href="#models">
+                                        models
+                                        {/* <span><?=$menu[3]?></span> */}
+                                    </a>
+                                </li>
+                                {/* <?php if($utm_content === 'pricep'): ?>
+                                <? endif; ?> */}
+                                <li>
+                                    <a href="#models">
+                                        models
+                                        {/* <span><?=$menu[2]?></span> */}
+                                    </a>
+                                </li>
+                                {/* <?php if($utm_content === 'pochvofrez'): ?>
+                                <? endif; ?> */}
+                                <li>
+                                    <a href="#models">
+                                        {/* <span><?=$menu[2]?></span> */}
+                                    </a>
+                                </li>
+
+                                {/* <? if(!isset($s3)): ?>
+                                <? endif; ?> */}
+                                <li>
+                                    <a href="#advantages">
+                                        {/* <span><?=$menu[3]?></span> */}
+                                    </a>
+                                </li>
+
+								{/* <? if(!($utm_content === 'mototraktor_kupit_vd' || 
+                                    $utm_content === 'mototraktor_kupit_vd-ua' ||
+                                    $utm_content === 'mototraktor_kupit_video' ||
+                                    $utm_content === 'mototraktor_kupit_v2'
+                                ) && isset($video)): ?>
+                                    
+                                <? endif;?> */}
+                                <li>
+                                    <a href="#tractors">
+                                        {/* <span><?=$menu[4]?></span> */}
+                                    </a>
+                                </li>
+                                {/*<!--                                 <li>
+                                    <a href="#gallery">
+                                        <span>Gallery</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#partners">
+                                        <span>Our Partners</span>
+                                    </a>
+                                </li> -->*/}
+
+                                <li>
+                                    <a href="#contacts">
+                                        {/* <span><?=$menu[5]?></span> */}
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            </header>
         );
     }
-
-    renderSquare(index: number) {
-        return (
-            <Square 
-                onClick={() => this.handleClick(index) } 
-                value={this.state.squares[index]}
-            ></Square>
-        );
-    }
-}
-
-export const Square: React.FC<MenuProps> = (props) => {
-    return (
-        <button
-            className="square"
-            onClick={props.onClick}
-        >
-            {props.value}
-        </button>
-    );
 }
