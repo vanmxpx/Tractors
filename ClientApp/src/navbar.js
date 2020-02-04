@@ -697,7 +697,7 @@
          */
       });
       return window.RDNavbar = RDNavbar;
-    })(window.jQuery, document, window);
+    })($, document, window);
   
   
     /**
