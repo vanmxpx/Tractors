@@ -8,10 +8,11 @@ const WelcomeModule: React.FC = () => {
         <div className="welcome-module-wrapper">
             <Parallax
                 className="welcome-module-parallax"
+                bgClassName="welcome-welcome-module-content-bg"
                 contentClassName="welcome-module-content"
                 bgImage={require('./back1.jpg')}
                 bgImageAlt="the dog"
-                strength={300}
+                strength={1600}
             >
                 
                 <div
