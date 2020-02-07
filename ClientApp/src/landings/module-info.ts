@@ -1,6 +1,9 @@
 import { CSSProperties } from 'react';
 
 export interface ModuleInfo {
+    $product_name?: string;
+    $product_id?: string;
+    $s1_bt1: string;
     $ukr?: boolean;
     $this1: string | string[];
     $but_text: string;

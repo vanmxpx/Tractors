@@ -26,9 +26,9 @@ const LandingBody: React.FC = () => {
     let $utm_content = query.get("utm_content");
     let params;
     if ($utm_content) {
-        params = require("./landings/" + $utm_content + ".js").params;
+        params = require("./landings/" + $utm_content + ".tsx").params;
     } else { 
-        params = require("./landings/default.ts").params;
+        params = require("./landings/mototraktor_kupit_v2.tsx").params;
         console.log(params);
     }
     return (

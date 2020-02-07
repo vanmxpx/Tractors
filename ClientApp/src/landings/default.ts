@@ -6,19 +6,21 @@ class DefaultInfo implements ModuleInfo {
     $but_text = '��������� � �������������! ���:';
     $name = Array('�����������', '������������', '������������', '�������������');
     $price = '59 000';
-    $logo = 'images/logo.png';
+    $logo = 'logo.png';
     $menu = Array('Главная', 'Преимущества', 'Рассчитать', 'Отзывы', 'Контакты');
+    $this1 = Array('�������', '�������', '���������');
     $s1_h1 = '<br>����� ��� ������ <br> ' + this.$name[0] + '? <br> <span class="mini-t">' + this.$name[2] + ' �� <span class="mini-p">' + this.$price + '</span> ���</span><div>3 ���� ��������</div>';
-    $s1_background = "../images/mototraktor/s1.jpg";
-    $s2_background = "../images/mototraktor/s2.jpg";
-    $s3_background = "../images/mototraktor/s3.jpg";
-    $s4_background = "../images/mototraktor/s4.jpg";
-    $s5_background = "../images/mototraktor/s5.jpg";
+    $s1_bt1 =  '�������� <br><span>' + this.$name[0] + ' ����� � ������';
+    $s1_background = "mototraktor/s1.jpg";
+    $s2_background = "mototraktor/s2.jpg";
+    $s3_background = "mototraktor/s3.jpg";
+    $s4_background = "mototraktor/s4.jpg";
+    $s5_background = "mototraktor/s5.jpg";
     $phone = phone.$phone;
     $recall_dialog = '�� ����������!';
     $first_form = {
         'class' : 'first-form-box first-form-box-redesign',
-        'background' : '/images/form-first/4.png',
+        'background' : 'form-first/4.png',
         'body': `			<div class="first-form-title first-form-title-redesign">
                                 ������ ����� ������ <br>
                                 ������������ <br>
@@ -28,7 +30,7 @@ class DefaultInfo implements ModuleInfo {
                                 </span>
                             </div>
 
-                            <img class="first-form-img first-form-img-redesign first-form-img__boz-shadow" src="/images/form-first/gift4.jpg">
+                            <img class="first-form-img first-form-img-redesign first-form-img__boz-shadow" src={ require("../../images/form-first/gift4.jpg") }>
 
                             <div class="first-form-gift first-form-gift-redesign">
                                 � �������� ������-����� �� 1.25 � <br>
@@ -36,8 +38,8 @@ class DefaultInfo implements ModuleInfo {
                                 <span>
                                     � �������!
                                 </span>
-                            </div>',
-  'form' => '<form id="contactForm" class="first-form first-form-redesign" novalidate="">
+                            </div>`,
+  'form':  `<form id="contactForm" class="first-form first-form-redesign" novalidate="">
                                 <ol>
                                     <li class="form-group">
                                       <input id="name" name="name" type="text" placeholder="���� ���" required="" data-validation-required-message="������� ���� ���" aria-invalid="false">
