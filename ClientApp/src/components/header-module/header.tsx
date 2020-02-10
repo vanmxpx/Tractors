@@ -75,7 +75,7 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
         }
     }
     this1ZapchCredit() {
-        if(this.props.params.$this1=='кред' || this.props.params.$this1=='запч_кред' || this.props.params.$this1=='запч_кред2' || this.props.params.$this1=='запч_кред3') {
+        if(this.props.params.$this1==='кред' || this.props.params.$this1==='запч_кред' || this.props.params.$this1==='запч_кред2' || this.props.params.$this1==='запч_кред3') {
             return (
                 <div>
                     <div className="but-text">{ this.props.params.$but_text_credit || ''}</div>
@@ -98,7 +98,7 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
         } else {
             return (
                 <div>
-                    <a href="#order-dialog" className="btn btn-md btn-primary bt1 popup-with-zoom-anim" style={this.props.params.$this1=='кред' ? { fontWeight: 300, padding: '12px 28px 10px;'} : {} } >
+                    <a href="#order-dialog" className="btn btn-md btn-primary bt1 popup-with-zoom-anim" style={this.props.params.$this1==='кред' ? { fontWeight: 300, padding: '12px 28px 10px;'} : {} } >
                         {this.props.params.$s1_bt1}
                     </a>
                 </div>
@@ -145,7 +145,7 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
                     <div className="this3"> <img src={require("../../images/star.png")}  alt=""/> {this.props.params.$this1[2]}</div>
                 </div>
             );
-        } else if (this.props.params.$this1 == 'запч' || this.props.params.$this1 == 'запч_кред') {
+        } else if (this.props.params.$this1 === 'запч' || this.props.params.$this1 === 'запч_кред') {
             return (
                 <div className="container">
                     <div className="row kredit-box">
@@ -183,7 +183,7 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
                     </div>
                 </div>
             );
-        } else if (this.props.params.$this1 == 'запч2' || this.props.params.$this1 == 'запч_кред2') {
+        } else if (this.props.params.$this1 === 'запч2' || this.props.params.$this1 === 'запч_кред2') {
             let header = this.props.params.$ukr ? 
                 (<h1><span className="mini-t">Оригінальні запчастини для мотоблоків</span></h1>) : 
                 (<h1><span className="mini-t"> ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ ДЛЯ МОТОБЛОКОВ</span></h1>)
@@ -223,7 +223,7 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
                     </div>
                 </div>
             );
-        } else if (this.props.params.$this1 == 'запч3' || this.props.params.$this1 == 'запч_кред3') {
+        } else if (this.props.params.$this1 === 'запч3' || this.props.params.$this1 === 'запч_кред3') {
             let header = this.props.params.$ukr ? 
                 (<h1><span className="mini-t">Оригінальні запчастини для мiнiтракторів</span></h1>) : 
                 (<h1><span className="mini-t">ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ К МИНИТРАКТОРАМ</span></h1>)
@@ -302,7 +302,7 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
                             <div className="rd-navbar-brand">
 
                                     <span className="icon icon-md icon-primary icon-primary-variant-1">
-                                        <img src={ require(`../../images/${this.props.params.$logo}`) }></img>
+                                        <img src={ require(`../../images/${this.props.params.$logo}`) } alt=""></img>
                                     </span>
 
                             </div>
@@ -389,7 +389,7 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
                             <div className="rd-navbar-brand">
 
                                     <span className="icon icon-md icon-primary icon-primary-variant-2">
-                                        <img src={ require(`../../images/${this.props.params.$logo}`) }></img>
+                                        <img src={ require(`../../images/${this.props.params.$logo}`) } alt=""></img>
                                     </span>
 
                             </div>

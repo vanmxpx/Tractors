@@ -7,7 +7,7 @@ class MototractorKupitInfo implements ModuleInfo {
         $phone = phone.$phone;
 		$video = 'tracktor_960x350.mp4';
 
-		$name = Array('минитрактор', 'минитрактора', 'минитракторы', 'минитракторов');
+		$name = ['минитрактор', 'минитрактора', 'минитракторы', 'минитракторов'];
 
 		$price = '56 000';
 
@@ -35,7 +35,7 @@ class MototractorKupitInfo implements ModuleInfo {
                                     </span>
                                 </div>
 
-                                <img className="first-form-img first-form-img-redesign first-form-img__boz-shadow media-width_150" src={ require('../images/form-first/gift4.jpg')} />
+                                <img alt="" className="first-form-img first-form-img-redesign first-form-img__boz-shadow media-width_150" src={ require('../images/form-first/gift4.jpg')} />
 
                                 <div className="first-form-gift first-form-gift-redesign">
                                    и получите лопату-отвал на 1.25 м <br/>
@@ -76,11 +76,11 @@ class MototractorKupitInfo implements ModuleInfo {
 		// $s7_background = "..mototraktor/s7.jpg";
 
 
-		$menu = Array('Главная', 'Преимущества','Обзор','Модели', 'Рассчитать', 'Отзывы', 'Контакты');
+		$menu = ['Главная', 'Преимущества','Обзор','Модели', 'Рассчитать', 'Отзывы', 'Контакты'];
 		$recall_dialog = 'МЫ ПЕРЕЗВОНИМ!';
 		$free_call_text = 'Звонок бесплатный';
 		$but_text = 'ПОКУПАЙТЕ У ПРОИЗВОДИТЕЛЯ! ЭТО:';
-		$this1 = Array('ВЫГОДНО', 'НАДЕЖНО', 'БЕЗОПАСНО');
+		$this1 = ['ВЫГОДНО', 'НАДЕЖНО', 'БЕЗОПАСНО'];
 
 		$advantages_block = (
                     <div>
@@ -117,7 +117,7 @@ class MototractorKupitInfo implements ModuleInfo {
                         </section>
                         <section className="back3 text-center" id="vidos">
                         <h2>ВИДЕО ОБЗОР</h2>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xRt6fYL9QNA" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe title="xRt6fYL9QNA" width="560" height="315" src="https://www.youtube.com/embed/xRt6fYL9QNA" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </section>
 
 
@@ -293,7 +293,7 @@ class MototractorKupitInfo implements ModuleInfo {
 		$s2_left_this2_style = '';
 		$s2_right_style = 'padding-bottom: 88px;';
 		$s2_right_this2_style = 'margin-top: 20px;';
-		$s2_this_left = Array(
+		$s2_this_left = [
 			'Являемся заводом-изготовителем',
 			'Работаем без посредников',
 			'Даем гарантию 3 года',
@@ -311,10 +311,10 @@ class MototractorKupitInfo implements ModuleInfo {
 			// 'Качественные комплектующие',
 			// 'Навесное оборудование от производителя по оптовым ценам и  бесплатной доставкой',
 			// 'В комплекте с мототрактором идет почвофреза 110 см и 2-х корпусный плуг',
-		);
+        ];
 		$s2_this_left_but = 'УЗНАТЬ ПОДРОБНЕЕ';
 
-		$s2_this_right = Array(
+		$s2_this_right = [
 			'Являются посредниками',
 			'Взимают плату за посредничество',
 			'Гарантия 1 год либо не дают гарантий вовсе',
@@ -332,7 +332,7 @@ class MototractorKupitInfo implements ModuleInfo {
 			// 'Поставляют некачественную китайскую сборку',
 			// 'Некачественные китайские комплектующие',
 			// 'Указывают цену на трактор без комплекта',
-		);
+        ];
 
 
 		$s3_form = {
