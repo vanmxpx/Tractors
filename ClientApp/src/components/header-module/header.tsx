@@ -82,8 +82,9 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
                     <div className="this">
                         <a href="#order-dialog" className="btn btn-md btn-primary bt-line bt1 popup-with-zoom-anim" >
                             { parse(this.props.params.$s1_bt1) }
-                        </a>
-                        <a className="btn btn-md btn-primary bt-line bt-credit" href="javascript:void(0)" type="button" 
+                        </a>{
+                        // eslint-disable-next-line
+                        }<a className="btn btn-md btn-primary bt-line bt-credit" href="javascript:void(0)" type="button" 
                         
                             onClick={ this.this1ZapchCreditClick }>
                             <span>
