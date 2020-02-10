@@ -17,11 +17,11 @@ class MototractorKupitInfo implements ModuleInfo {
 		$title = 'Купить '+ this.$name[0] + '';
 		$keywords = 'Купить '+ this.$name[0] + '';
 		$description = 'Купить '+ this.$name[0] + '';
-		$s1_h1 = 'ИЩЕТЕ ГДЕ КУПИТЬ <br> '+ this.$name[0] + '? <br> <span class="mini-t">'+ this.$name[2] + ' ОТ <span class="mini-p">' + this.$price +'</span> ГРН</span><div>3 года гарантии</div>';
+		$s1_h1 = 'ИЩЕТЕ ГДЕ КУПИТЬ <br/> '+ this.$name[0] + '? <br/> <span className="mini-t">'+ this.$name[2] + ' ОТ <span className="mini-p">' + this.$price +'</span> ГРН</span><div>3 года гарантии</div>';
 		$s1_bt1 = 'ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ';
 		$s2_left_title = ''+ this.$name[2] + ' <span>ДМТЗ</span>';
 		$s2_right_title = '<span>ДРУГИЕ</span> ' + this.$name[2];
-		$s3_h1 = 'РАССЧИТАЙТЕ СТОИМОСТЬ <br>  <span class="tw">ВАШЕГО ' + this.$name[1] + '</span> <br> <span class="with-line">УЖЕ СЕЙЧАС!</span>';
+		$s3_h1 = 'РАССЧИТАЙТЕ СТОИМОСТЬ <br/>  <span className="tw">ВАШЕГО ' + this.$name[1] + '</span> <br/> <span className="with-line">УЖЕ СЕЙЧАС!</span>';
 
 		$first_form = {
 			'class' : 'first-form-box first-form-box-redesign',
@@ -82,49 +82,51 @@ class MototractorKupitInfo implements ModuleInfo {
 		$but_text = 'ПОКУПАЙТЕ У ПРОИЗВОДИТЕЛЯ! ЭТО:';
 		$this1 = Array('ВЫГОДНО', 'НАДЕЖНО', 'БЕЗОПАСНО');
 
-		$advantages_block = `<section class="bg-image bg-fixed why-choose-section">
-                            <div class="container">
-                                <div class="why-choose-box">
-                                    <div class="row">
-                                        <div class="col-lg-12">
+		$advantages_block = (
+                    <div>
+                        <section className="bg-image bg-fixed why-choose-section">
+                            <div className="container">
+                                <div className="why-choose-box">
+                                    <div className="row">
+                                        <div className="col-lg-12">
                                             <h1>ПОЧЕМУ ВЫБИРАЮТ МИНИТРАКТОРЫ ДМТЗ</h1>
-                                            <p>мы производим минитракторы на собственном заводе, что позволяет<br> гарантировать высокое качество каждой детали</p>
+                                            <p>мы производим минитракторы на собственном заводе, что позволяет<br/> гарантировать высокое качество каждой детали</p>
                                         </div> 
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-6 col-sm-12">
-                                            <img src="images/choose-1.png" alt="choose-1">
+                                    <div className="row">
+                                        <div className="col-lg-3 col-md-6 col-sm-12">
+                                            <img src={require('../images/choose-1.png')}  alt="choose-1"/>
                                             <h6>КАЧЕСТВЕННАЯ УКРАИНСКАЯ СБОРКА</h6>
                                         </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12">
-                                            <img src="images/choose-2.png" alt="choose-2">
+                                        <div className="col-lg-3 col-md-6 col-sm-12">
+                                            <img src={require('../images/choose-2.png')} alt="choose-2"/>
                                             <h6>КАЧЕСТВЕННЫЕ КОМПЛЕКТУЮЩИЕ</h6>
                                         </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12">
-                                            <img src="images/choose-3.png" alt="choose-3">
-                                            <h6>НАВЕСНОЕ <br> ОБОРУДОВАНИЕ</h6>
+                                        <div className="col-lg-3 col-md-6 col-sm-12">
+                                            <img src={require('../images/choose-3.png')}  alt="choose-3"/>
+                                            <h6>НАВЕСНОЕ <br/> ОБОРУДОВАНИЕ</h6>
                                             <p>по оптовым ценам и с бесплатной доставкой</p>
                                         </div>
-                                    <div class="col-lg-3 col-md-6 col-sm-12">
-                                            <img src="images/choose-4.png" alt="choose-4">
-                                            <h6>БЕСПЛАТНАЯ<br> ДОСТАВКА</h6>
+                                    <div className="col-lg-3 col-md-6 col-sm-12">
+                                            <img src={require('../images/choose-4.png')}  alt="choose-4"/>
+                                            <h6>БЕСПЛАТНАЯ<br/> ДОСТАВКА</h6>
                                         </div> 
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="back3 text-center" id="vidos">
+                        <section className="back3 text-center" id="vidos">
                         <h2>ВИДЕО ОБЗОР</h2>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xRt6fYL9QNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xRt6fYL9QNA" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </section>
 
 
-                        <section class="why-choose-wrapper">
+                        <section className="why-choose-wrapper">
                             <h1>Почему наши тракторы лучше</h1>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-23">
-                                        <ul class="advantages-list">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-lg-23">
+                                        <ul className="advantages-list">
                                             <li>ДВИГАТЕЛЬ: 16 л.с. (надёжный и экономичный)</li>
                                             <li>РАЗМЕРЫ (ДхШхВ): 2500 х 1300 х 1350 (мм)</li>
                                             <li>КЛИРЕНС: 300 мм</li>
@@ -134,159 +136,159 @@ class MototractorKupitInfo implements ModuleInfo {
                                 </div>
                             </div>
 
-                            <div class="dot dot-1" data-value="1"></div>
-                            <div class="dot dot-2" data-value="2"></div>
-                            <div class="dot dot-3" data-value="3"></div>
-                            <div class="dot dot-4" data-value="4"></div>
-                            <div class="dot dot-5" data-value="5"></div>
-                            <div class="dot dot-6" data-value="6"></div>
-                            <div class="dot dot-7" data-value="7"></div>
-                            <div class="dot dot-8" data-value="8"></div>
-                            <div class="dot dot-9" data-value="9"></div>
-                            <div class="dot dot-10" data-value="10"></div>
+                            <div className="dot dot-1" data-value="1"></div>
+                            <div className="dot dot-2" data-value="2"></div>
+                            <div className="dot dot-3" data-value="3"></div>
+                            <div className="dot dot-4" data-value="4"></div>
+                            <div className="dot dot-5" data-value="5"></div>
+                            <div className="dot dot-6" data-value="6"></div>
+                            <div className="dot dot-7" data-value="7"></div>
+                            <div className="dot dot-8" data-value="8"></div>
+                            <div className="dot dot-9" data-value="9"></div>
+                            <div className="dot dot-10" data-value="10"></div>
 
-                            <div class="why-item-box why-item-box-1 hide">
-                                <div class="arrow-1 arrow1-1"></div>
-                                <div class="arrow-2 arrow1-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-1 hide">
+                                <div className="arrow-1 arrow1-1"></div>
+                                <div className="arrow-2 arrow1-2"></div>
+                                <div className="item-container">
                                     <h6>Передний гидроцилиндр</h6>
                                     <p>Увеличивает функциональные возможности трактора, позволяет использовать переднюю сенокосилку, лопатуотвал, щётку подметальную.</p>
-                                    <img src="images/why-choose-items/why-item-2.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-2.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="why-item-box why-item-box-2 hide">
-                                <div class="arrow-1 arrow2-1"></div>
-                                <div class="arrow-2 arrow2-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-2 hide">
+                                <div className="arrow-1 arrow2-1"></div>
+                                <div className="arrow-2 arrow2-2"></div>
+                                <div className="item-container">
                                     <h6>Регулируемые колии колёс</h6>
                                     <p>Позволяет регулировать размер колеи трактора при работе в междурядье.</p>
-                                    <img src="why-choose-items/why-item-7.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-7.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="why-item-box why-item-box-3 hide">
-                                <div class="arrow-1 arrow3-1"></div>
-                                <div class="arrow-2 arrow3-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-3 hide">
+                                <div className="arrow-1 arrow3-1"></div>
+                                <div className="arrow-2 arrow3-2"></div>
+                                <div className="item-container">
                                     <h6>5-ти ручейных шкив двигателя</h6>
                                     <p>Увеличивает функциональные возможности трактора позволяя агрегатировать трактор различными механическими механизмами. </p>
-                                    <img src="why-choose-items/why-item-5.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-5.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="why-item-box why-item-box-4 hide">
-                                <div class="arrow-1 arrow4-1"></div>
-                                <div class="arrow-2 arrow4-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-4 hide">
+                                <div className="arrow-1 arrow4-1"></div>
+                                <div className="arrow-2 arrow4-2"></div>
+                                <div className="item-container">
                                     <h6> Воздушный фильтр за пределами панели приборов</h6>
                                     <p>Удобность в обслуживании фильтра и экономия времени на проведении ТО.</p>
-                                    <img src="why-choose-items/why-item-10.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-10.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="why-item-box why-item-box-5 hide">
-                                <div class="arrow-1 arrow5-1"></div>
-                                <div class="arrow-2 arrow5-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-5 hide">
+                                <div className="arrow-1 arrow5-1"></div>
+                                <div className="arrow-2 arrow5-2"></div>
+                                <div className="item-container">
                                     <h6>Трос декомпрессора и ручной газ</h6>
                                     <p>С лёгкостью и без усилий вы запустите двигатель даже в самых суровых зимних условиях.</p>
-                                    <img src="why-choose-items/why-item-8.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-8.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="why-item-box why-item-box-6 hide">
-                                <div class="arrow-1 arrow6-1"></div>
-                                <div class="arrow-2 arrow6-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-6 hide">
+                                <div className="arrow-1 arrow6-1"></div>
+                                <div className="arrow-2 arrow6-2"></div>
+                                <div className="item-container">
                                     <h6>Прямое натяжение ремней привода двигателя и КПП</h6>
                                     <p>Передаёт обороты двигателя на муфту сцепления КПП без потери мощности, в разы увеличивает срок службы приводных ремней.</p>
-                                    <img src="why-choose-items/why-item-4.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-4.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="why-item-box why-item-box-7 hide">
-                                <div class="arrow-1 arrow7-1"></div>
-                                <div class="arrow-2 arrow7-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-7 hide">
+                                <div className="arrow-1 arrow7-1"></div>
+                                <div className="arrow-2 arrow7-2"></div>
+                                <div className="item-container">
                                     <h6>Отдельный рычаг повышенных и пониженных передач</h6>
                                     <p>Удобность в управлении минитрактором.  Исключается возможность включения двух передач одновременно. </p>
-                                    <img src="why-choose-items/why-item-9.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-9.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                             <div class="why-item-box why-item-box-8 hide">
-                                <div class="arrow-1 arrow8-1"></div>
-                                <div class="arrow-2 arrow8-2"></div>
-                                <div class="item-container">
+                             <div className="why-item-box why-item-box-8 hide">
+                                <div className="arrow-1 arrow8-1"></div>
+                                <div className="arrow-2 arrow8-2"></div>
+                                <div className="item-container">
                                     <h6>Блокировка дифференциала</h6>
                                     <p>Увеличивает проходимость трактора, позволяет эксплуатировать трактор в тяжёлых дорожных условиях, как при размытых грунтах, так и при гололёде. </p>
-                                    <img src="why-choose-items/why-item-1.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-1.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="why-item-box why-item-box-9 hide">
-                                <div class="arrow-1 arrow9-1"></div>
-                                <div class="arrow-2 arrow9-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-9 hide">
+                                <div className="arrow-1 arrow9-1"></div>
+                                <div className="arrow-2 arrow9-2"></div>
+                                <div className="item-container">
                                     <h6>Задний гидравлический навесной механизм с плавающим режимом</h6>
                                     <p>Позволяет равномерно и качественно обрабатывать почву и растительные культуры на склонах и холмах. </p>
-                                    <img src="why-choose-items/why-item-3.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-3.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="why-item-box why-item-box-10 hide">
-                                <div class="arrow-1 arrow10-1"></div>
-                                <div class="arrow-2 arrow10-2"></div>
-                                <div class="item-container">
+                            <div className="why-item-box why-item-box-10 hide">
+                                <div className="arrow-1 arrow10-1"></div>
+                                <div className="arrow-2 arrow10-2"></div>
+                                <div className="item-container">
                                     <h6>Регулируемые колии колёс</h6>
                                     <p>Позволяет регулировать размер колеи трактора при работе в междурядье.</p>
-                                    <img src="why-choose-items/why-item-6.jpg" alt="">
-                                    <div class="item-box-btn-close">
-                                        <div class="stick stick-1"></div>
-                                        <div class="stick stick-2"></div>
+                                    <img src={require('../images/why-choose-items/why-item-6.jpg')}  alt=""/>
+                                    <div className="item-box-btn-close">
+                                        <div className="stick stick-1"></div>
+                                        <div className="stick stick-2"></div>
                                     </div>
                                 </div>
                             </div>
 
                         </section>
-                        `;
+                    </div>);
 
 		$s2_left_this2_style = '';
 		$s2_right_style = 'padding-bottom: 88px;';
@@ -343,7 +345,7 @@ class MototractorKupitInfo implements ModuleInfo {
         };
 
 
-		$s4_title = 'ЧТО ГОВОРЯТ</span> <br> НАШИ КЛИЕНТЫ ';
+		$s4_title = 'ЧТО ГОВОРЯТ</span> <br/> НАШИ КЛИЕНТЫ ';
 $fback = {
 
 
@@ -389,7 +391,7 @@ $fback = {
 
         $popup1_form_short = true;
 		$popup1_h1 = 'КАК С ВАМИ СВЯЗАТЬСЯ ?';
-        $popup1_header = 'Не нашли что искали? <br> Оставьте номер, мы перезвоним и поможем!';
+        $popup1_header = 'Не нашли что искали? <br/> Оставьте номер, мы перезвоним и поможем!';
 		$popup1_form = {
 			'placeholder1' : 'Меня зовут',
 			'required_message1' : 'Введите свое имя',
@@ -399,7 +401,7 @@ $fback = {
 			'button' : 'ОСТАВИТЬ ЗАЯВКУ'
         };
 
-		$popup2_h1 = 'ЗАКАЗАТЬ ' + this.$name[0] + ' <br> ПРЯМО С ЗАВОДА';
+		$popup2_h1 = 'ЗАКАЗАТЬ ' + this.$name[0] + ' <br/> ПРЯМО С ЗАВОДА';
 		$popup2_form = {
 			'placeholder1' : 'Меня зовут',
 			'required_message1' : 'Введите свое имя',

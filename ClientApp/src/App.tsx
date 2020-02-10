@@ -4,9 +4,10 @@ import WelcomeModule from './components/page-modules/welcome-module/welcome-modu
 import {
     BrowserRouter as Router,
     useLocation
-  } from "react-router-dom";
+} from "react-router-dom";
 import HeaderModule from './components/header-module/header';
 import { ModuleInfo } from './landings/module-info';
+import MainModule from './components/main-module/main-module';
 
 export interface ModuleProps extends React.Props<any> {
     params: ModuleInfo,
@@ -27,7 +28,7 @@ const LandingBody: React.FC = () => {
     let params;
     if ($utm_content) {
         params = require("./landings/" + $utm_content + ".tsx").params;
-    } else { 
+    } else {
         params = require("./landings/mototraktor_kupit_v2.tsx").params;
         console.log(params);
     }
@@ -35,9 +36,14 @@ const LandingBody: React.FC = () => {
         <div className="page text-center">
             <HeaderModule
                 params={params}
-                $utm_content = {$utm_content}
+                $utm_content={$utm_content}
             ></HeaderModule>
+            <MainModule
+                params={params}
+                $utm_content={$utm_content}
+            >
 
+            </MainModule>
             <div id="intro">
                 <WelcomeModule >
 

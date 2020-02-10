@@ -1,6 +1,8 @@
 import { CSSProperties } from 'react';
 
 export interface ModuleInfo {
+    $advantages_block?: JSX.Element;
+    $disable_main?: boolean;
     $product_name?: string;
     $product_id?: string;
     $s1_bt1: string;
