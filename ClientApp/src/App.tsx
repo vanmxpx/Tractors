@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import WelcomeModule from './components/page-modules/welcome-module/welcome-module';
 import {
     BrowserRouter as Router,
     useLocation

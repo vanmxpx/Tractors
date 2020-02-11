@@ -351,9 +351,8 @@ export default class HeaderModule extends React.Component<ModuleProps, HeaderSta
 
             {this.videoMototractor()}
             
-            {/* style={{ backgroundImage: `url(${require(`../../images/${this.props.params.$s1_background}`)})`}}  */}
 
-            <section className="well-xl1 bg-image bg-fixed position__relative" >
+            <section className="well-xl1 bg-image bg-fixed position__relative" style={{ backgroundImage: `url(${require(`../../images/${this.props.params.$s1_background}`)})`}} >
 
                 <div className="container">
 
