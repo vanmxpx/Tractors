@@ -15,7 +15,7 @@ export default class MainModule extends React.Component<ModuleProps> {
 
         return (
             <main className="page-content" style={ this.props.params.$disable_main ? { display: 'none' } :  {} }>
-                {this.isAdvantages()}
+                {/* {this.isAdvantages()} */}
             </main>
         );
     
