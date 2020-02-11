@@ -44,7 +44,7 @@ const LandingBody: React.FC = () => {
             >
 
             </MainModule>
-            <div id="intro">
+            {/* <div id="intro">
                 <WelcomeModule >
 
                 </WelcomeModule>
@@ -63,7 +63,7 @@ const LandingBody: React.FC = () => {
                 <WelcomeModule >
 
                 </WelcomeModule>
-            </div>
+            </div> */}
         </div>
     );
 }
