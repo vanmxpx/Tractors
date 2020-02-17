@@ -19,7 +19,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     FetchDataComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule.withServerTransition({ appId: 'app' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
