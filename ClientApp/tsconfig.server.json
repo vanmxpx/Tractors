@@ -1,8 +1,12 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "commonjs"
   },
+  "files": [
+    "src/main.server.ts",
+    "src/polyfills.ts"
+  ],
   "angularCompilerOptions": {
     "entryModule": "app/app.server.module#AppServerModule"
   }
