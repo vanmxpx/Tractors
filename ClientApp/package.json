@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ssr": "ng run Tractors:server:production && echo Date",
+    "start:ssr": "node ssr-for-dotnet.js",
+    "build:ssr": "ng run Tractors:server:production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
