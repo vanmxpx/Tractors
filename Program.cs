@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Sketch7.DotnetNgx
+namespace Tractors
 {
 	public class Program
 	{

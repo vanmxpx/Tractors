@@ -134,7 +134,7 @@
               "progress": false
             },
             "production": {
-              "optimization": false, // todo: try to enable, as currently it breaks with bundle
+              "optimization": true,
               "outputHashing": "none",
               "sourceMap": false,
               "namedChunks": false,
@@ -146,5 +146,8 @@
       }
     }
   },
-  "defaultProject": "DotnetNgx"
+  "defaultProject": "DotnetNgx",
+  "cli": {
+    "analytics": "3d0024ab-6866-40b0-a6a5-e1451faf664b"
+  }
 }

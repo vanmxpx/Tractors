@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Sketch7.DotnetNgx.Core;
+using Tractors.Core;
 
-namespace Sketch7.DotnetNgx
+namespace Tractors
 {
 	public class Startup
 	{

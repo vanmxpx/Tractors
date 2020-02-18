@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 // todo: either move these into lib or PR for AngularCliBuilder changes
 // ref: copied from https://github.com/aspnet/AspNetCore/blob/master/src/Middleware/SpaServices.Extensions/src/AngularCli/AngularCliBuilder.cs & modified
-namespace Sketch7.DotnetNgx.Core
+namespace Tractors.Core
 {
 	/// <summary>
 	/// Provides an implementation of <see cref="ISpaPrerendererBuilder"/> that can build
