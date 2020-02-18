@@ -1,0 +1,7 @@
+{
+  "defaultSeverity": "warn",
+  "rules": {
+      "quotemark": false
+    
+  }
+}

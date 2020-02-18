@@ -1,0 +1,163 @@
+2020-02-18 19:59:31.011 +02:00 [INF] User profile is available. Using 'C:\Users\nick\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-18 19:59:33.934 +02:00 [INF] [36m=== Webpack compilation mode: development ===[0m
+2020-02-18 19:59:34.224 +02:00 [INF] [36m=== Webpack compilation mode: development ===[0m
+2020-02-18 19:59:34.435 +02:00 [INF] Starting type checking service...
+2020-02-18 19:59:34.436 +02:00 [INF] Using 1 worker with 2048MB memory limit
+2020-02-18 19:59:34.481 +02:00 [INF] Starting type checking service...
+2020-02-18 19:59:34.481 +02:00 [INF] Using 1 worker with 2048MB memory limit
+2020-02-18 19:59:40.088 +02:00 [INF] Type checking in progress...
+2020-02-18 19:59:40.890 +02:00 [INF] Type checking in progress...
+2020-02-18 19:59:40.907 +02:00 [INF] webpack built 2b80edd788660211887f in 6468ms
+2020-02-18 19:59:40.926 +02:00 [INF] [34mi[39m [90mя╜вwdmя╜г[39m: Hash: 2b80edd788660211887f
+Version: webpack 4.32.2
+Time: 6468ms
+Built at: 02/18/2020 7:59:40 PM
+             Asset      Size       Chunks                    Chunk Names
+    main-client.js  3.55 MiB  main-client  [emitted]  [big]  main-client
+main-client.js.map  29.9 KiB  main-client  [emitted]         main-client
+Entrypoint main-client [big] = main-client.js main-client.js.map
+2020-02-18 19:59:40.926 +02:00 [INF] [34mi[39m [90mя╜вwdmя╜г[39m: Compiled successfully.
+2020-02-18 19:59:41.536 +02:00 [INF] No type errors found
+2020-02-18 19:59:41.536 +02:00 [INF] Version: typescript 3.5.1
+2020-02-18 19:59:41.536 +02:00 [INF] Time: 7058ms
+2020-02-18 19:59:41.570 +02:00 [INF] No type errors found
+2020-02-18 19:59:41.570 +02:00 [INF] Version: typescript 3.5.1
+2020-02-18 19:59:41.570 +02:00 [INF] Time: 7143ms
+2020-02-18 19:59:47.209 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/  
+2020-02-18 19:59:47.282 +02:00 [INF] Executing endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 19:59:47.296 +02:00 [INF] Route matched with {action = "Index", controller = "Main"}. Executing action RCB.TypeScript.Controllers.MainController.Index (Tractors)
+2020-02-18 19:59:47.314 +02:00 [INF] Executing action method RCB.TypeScript.Controllers.MainController.Index (Tractors) - Validation state: "Valid"
+2020-02-18 19:59:47.326 +02:00 [INF] Executed action method RCB.TypeScript.Controllers.MainController.Index (Tractors), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.9302ms.
+2020-02-18 19:59:47.355 +02:00 [INF] Executing ViewResult, running view Index.
+2020-02-18 19:59:48.553 +02:00 [INF] Executed ViewResult - view Index executed in 1216.3685ms.
+2020-02-18 19:59:48.560 +02:00 [INF] Executed action RCB.TypeScript.Controllers.MainController.Index (Tractors) in 1263.413ms
+2020-02-18 19:59:48.561 +02:00 [INF] Executed endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 19:59:48.573 +02:00 [INF] Request finished in 1366.9796ms 200 text/html; charset=utf-8
+2020-02-18 19:59:48.589 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/main-client.js?v=GkXQXVGCzQ38PIWoeIiv3EAtBQ1VyQx8xY-gpaBGPrU  
+2020-02-18 19:59:48.589 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.css?v=Mzps_XV6oelYGKWOPlbZ9Fmlzkk8CS0GefDyLharUPs  
+2020-02-18 19:59:48.589 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.js?v=uC2g6TuNe0b7icqO0x056Vw_O21rX_jk7v0BM6ieVFo  
+2020-02-18 19:59:48.696 +02:00 [INF] Sending file. Request path: '/dist/vendor.css'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.css'
+2020-02-18 19:59:48.696 +02:00 [INF] Request finished in 106.9897ms 200 text/css
+2020-02-18 19:59:48.699 +02:00 [INF] Request finished in 109.3896ms 200 application/javascript; charset=UTF-8
+2020-02-18 19:59:48.781 +02:00 [INF] Sending file. Request path: '/dist/vendor.js'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.js'
+2020-02-18 19:59:48.782 +02:00 [INF] Request finished in 192.2155ms 200 application/javascript
+2020-02-18 19:59:49.263 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/__webpack_hmr  
+2020-02-18 19:59:49.319 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/favicon.ico  
+2020-02-18 19:59:49.322 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\favicon.ico'
+2020-02-18 19:59:49.323 +02:00 [INF] Request finished in 3.733ms 200 image/x-icon
+2020-02-18 20:00:05.557 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.js.map  
+2020-02-18 20:00:05.557 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/main-client.js.map  
+2020-02-18 20:00:05.563 +02:00 [INF] Request finished in 5.4966ms 200 application/json; charset=UTF-8
+2020-02-18 20:00:05.563 +02:00 [INF] Sending file. Request path: '/dist/vendor.js.map'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.js.map'
+2020-02-18 20:00:05.563 +02:00 [INF] Request finished in 5.8729ms 200 text/plain
+2020-02-18 20:00:05.634 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.css?v=Mzps_XV6oelYGKWOPlbZ9Fmlzkk8CS0GefDyLharUPs  
+2020-02-18 20:00:05.638 +02:00 [INF] The file /dist/vendor.css was not modified
+2020-02-18 20:00:05.641 +02:00 [INF] Request finished in 7.1563ms 304 text/css
+2020-02-18 20:00:05.945 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.css.map  
+2020-02-18 20:00:05.948 +02:00 [INF] Sending file. Request path: '/dist/vendor.css.map'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.css.map'
+2020-02-18 20:00:05.948 +02:00 [INF] Request finished in 3.6323ms 200 text/plain
+2020-02-18 20:00:19.713 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/login  
+2020-02-18 20:00:19.720 +02:00 [INF] Executing endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:00:19.720 +02:00 [INF] Route matched with {action = "Index", controller = "Main"}. Executing action RCB.TypeScript.Controllers.MainController.Index (Tractors)
+2020-02-18 20:00:19.721 +02:00 [INF] Executing action method RCB.TypeScript.Controllers.MainController.Index (Tractors) - Validation state: "Valid"
+2020-02-18 20:00:19.721 +02:00 [INF] Executed action method RCB.TypeScript.Controllers.MainController.Index (Tractors), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.11330000000000001ms.
+2020-02-18 20:00:19.722 +02:00 [INF] Executing ViewResult, running view Index.
+2020-02-18 20:00:19.760 +02:00 [INF] Executed ViewResult - view Index executed in 38.4335ms.
+2020-02-18 20:00:19.760 +02:00 [INF] Executed action RCB.TypeScript.Controllers.MainController.Index (Tractors) in 39.691700000000004ms
+2020-02-18 20:00:19.760 +02:00 [INF] Executed endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:00:19.760 +02:00 [INF] Request finished in 46.8983ms 200 text/html; charset=utf-8
+2020-02-18 20:00:19.849 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.css?v=Mzps_XV6oelYGKWOPlbZ9Fmlzkk8CS0GefDyLharUPs  
+2020-02-18 20:00:19.850 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.js?v=uC2g6TuNe0b7icqO0x056Vw_O21rX_jk7v0BM6ieVFo  
+2020-02-18 20:00:19.851 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/main-client.js?v=GkXQXVGCzQ38PIWoeIiv3EAtBQ1VyQx8xY-gpaBGPrU  
+2020-02-18 20:00:19.870 +02:00 [INF] Sending file. Request path: '/dist/vendor.css'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.css'
+2020-02-18 20:00:19.870 +02:00 [INF] Request finished in 22.6457ms 200 text/css
+2020-02-18 20:00:19.882 +02:00 [INF] Request finished in 31.1835ms 200 application/javascript; charset=UTF-8
+2020-02-18 20:00:19.922 +02:00 [INF] Sending file. Request path: '/dist/vendor.js'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.js'
+2020-02-18 20:00:19.922 +02:00 [INF] Request finished in 72.6367ms 200 application/javascript
+2020-02-18 20:00:20.402 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/__webpack_hmr  
+2020-02-18 20:00:34.326 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.js.map  
+2020-02-18 20:00:34.327 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/main-client.js.map  
+2020-02-18 20:00:34.330 +02:00 [INF] Request finished in 2.918ms 200 application/json; charset=UTF-8
+2020-02-18 20:00:34.330 +02:00 [INF] Sending file. Request path: '/dist/vendor.js.map'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.js.map'
+2020-02-18 20:00:34.330 +02:00 [INF] Request finished in 3.811ms 200 text/plain
+2020-02-18 20:00:34.824 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.css.map  
+2020-02-18 20:00:34.828 +02:00 [INF] Sending file. Request path: '/dist/vendor.css.map'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.css.map'
+2020-02-18 20:00:34.828 +02:00 [INF] Request finished in 3.4589ms 200 text/plain
+2020-02-18 20:00:43.429 +02:00 [INF] Request finished in 23027.2796ms 200 text/event-stream; charset=utf-8
+2020-02-18 20:00:44.277 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/login  
+2020-02-18 20:00:44.279 +02:00 [INF] Executing endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:00:44.279 +02:00 [INF] Route matched with {action = "Index", controller = "Main"}. Executing action RCB.TypeScript.Controllers.MainController.Index (Tractors)
+2020-02-18 20:00:44.279 +02:00 [INF] Executing action method RCB.TypeScript.Controllers.MainController.Index (Tractors) - Validation state: "Valid"
+2020-02-18 20:00:44.279 +02:00 [INF] Executed action method RCB.TypeScript.Controllers.MainController.Index (Tractors), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.027ms.
+2020-02-18 20:00:44.280 +02:00 [INF] Executing ViewResult, running view Index.
+2020-02-18 20:00:44.290 +02:00 [INF] Executed ViewResult - view Index executed in 10.296100000000001ms.
+2020-02-18 20:00:44.290 +02:00 [INF] Executed action RCB.TypeScript.Controllers.MainController.Index (Tractors) in 10.987ms
+2020-02-18 20:00:44.290 +02:00 [INF] Executed endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:00:44.290 +02:00 [INF] Request finished in 12.9949ms 200 text/html; charset=utf-8
+2020-02-18 20:00:45.068 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.css?v=Mzps_XV6oelYGKWOPlbZ9Fmlzkk8CS0GefDyLharUPs  
+2020-02-18 20:00:45.074 +02:00 [INF] Sending file. Request path: '/dist/vendor.css'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.css'
+2020-02-18 20:00:45.074 +02:00 [INF] Request finished in 5.5287ms 200 text/css
+2020-02-18 20:00:45.074 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.js?v=uC2g6TuNe0b7icqO0x056Vw_O21rX_jk7v0BM6ieVFo  
+2020-02-18 20:00:45.088 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/main-client.js?v=GkXQXVGCzQ38PIWoeIiv3EAtBQ1VyQx8xY-gpaBGPrU  
+2020-02-18 20:00:45.715 +02:00 [INF] Request finished in 627.3175ms 200 application/javascript; charset=UTF-8
+2020-02-18 20:01:15.142 +02:00 [INF] Sending file. Request path: '/dist/vendor.js'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.js'
+2020-02-18 20:01:15.142 +02:00 [INF] Request finished in 30068.0144ms 200 application/javascript
+2020-02-18 20:01:31.263 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/__webpack_hmr  
+2020-02-18 20:01:35.116 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/robots.txt  
+2020-02-18 20:01:35.118 +02:00 [INF] Request finished in 1.5956ms 404 
+2020-02-18 20:01:35.465 +02:00 [INF] Request finished in 4201.5634ms 200 text/event-stream; charset=utf-8
+2020-02-18 20:01:35.797 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/login  
+2020-02-18 20:01:35.797 +02:00 [INF] Executing endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:01:35.799 +02:00 [INF] Route matched with {action = "Index", controller = "Main"}. Executing action RCB.TypeScript.Controllers.MainController.Index (Tractors)
+2020-02-18 20:01:35.799 +02:00 [INF] Executing action method RCB.TypeScript.Controllers.MainController.Index (Tractors) - Validation state: "Valid"
+2020-02-18 20:01:35.800 +02:00 [INF] Executed action method RCB.TypeScript.Controllers.MainController.Index (Tractors), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.099600000000000008ms.
+2020-02-18 20:01:35.801 +02:00 [INF] Executing ViewResult, running view Index.
+2020-02-18 20:01:35.818 +02:00 [INF] Executed ViewResult - view Index executed in 17.7834ms.
+2020-02-18 20:01:35.819 +02:00 [INF] Executed action RCB.TypeScript.Controllers.MainController.Index (Tractors) in 19.5376ms
+2020-02-18 20:01:35.819 +02:00 [INF] Executed endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:01:35.819 +02:00 [INF] Request finished in 22.1187ms 200 text/html; charset=utf-8
+2020-02-18 20:01:35.966 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.css?v=Mzps_XV6oelYGKWOPlbZ9Fmlzkk8CS0GefDyLharUPs  
+2020-02-18 20:01:35.967 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.js?v=uC2g6TuNe0b7icqO0x056Vw_O21rX_jk7v0BM6ieVFo  
+2020-02-18 20:01:35.967 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/main-client.js?v=GkXQXVGCzQ38PIWoeIiv3EAtBQ1VyQx8xY-gpaBGPrU  
+2020-02-18 20:01:35.969 +02:00 [INF] The file /dist/vendor.css was not modified
+2020-02-18 20:01:35.969 +02:00 [INF] Request finished in 3.8564ms 304 text/css
+2020-02-18 20:01:35.971 +02:00 [INF] The file /dist/vendor.js was not modified
+2020-02-18 20:01:35.971 +02:00 [INF] Request finished in 4.3399ms 304 application/javascript
+2020-02-18 20:01:35.993 +02:00 [INF] Request finished in 25.8993ms 200 application/javascript; charset=UTF-8
+2020-02-18 20:01:36.937 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/login  
+2020-02-18 20:01:36.937 +02:00 [INF] Executing endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:01:36.937 +02:00 [INF] Route matched with {action = "Index", controller = "Main"}. Executing action RCB.TypeScript.Controllers.MainController.Index (Tractors)
+2020-02-18 20:01:36.937 +02:00 [INF] Executing action method RCB.TypeScript.Controllers.MainController.Index (Tractors) - Validation state: "Valid"
+2020-02-18 20:01:36.937 +02:00 [INF] Executed action method RCB.TypeScript.Controllers.MainController.Index (Tractors), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0262ms.
+2020-02-18 20:01:36.938 +02:00 [INF] Executing ViewResult, running view Index.
+2020-02-18 20:01:36.949 +02:00 [INF] Executed ViewResult - view Index executed in 11.7896ms.
+2020-02-18 20:01:36.950 +02:00 [INF] Executed action RCB.TypeScript.Controllers.MainController.Index (Tractors) in 12.363000000000001ms
+2020-02-18 20:01:36.950 +02:00 [INF] Executed endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:01:36.950 +02:00 [INF] Request finished in 13.1726ms 200 text/html; charset=utf-8
+2020-02-18 20:01:39.008 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/vendor.css.map  
+2020-02-18 20:01:39.008 +02:00 [INF] Request finished in 0.3854ms 404 
+2020-02-18 20:01:39.039 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/login  
+2020-02-18 20:01:39.039 +02:00 [INF] Executing endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:01:39.039 +02:00 [INF] Route matched with {action = "Index", controller = "Main"}. Executing action RCB.TypeScript.Controllers.MainController.Index (Tractors)
+2020-02-18 20:01:39.039 +02:00 [INF] Executing action method RCB.TypeScript.Controllers.MainController.Index (Tractors) - Validation state: "Valid"
+2020-02-18 20:01:39.039 +02:00 [INF] Executed action method RCB.TypeScript.Controllers.MainController.Index (Tractors), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0244ms.
+2020-02-18 20:01:39.039 +02:00 [INF] Executing ViewResult, running view Index.
+2020-02-18 20:01:39.048 +02:00 [INF] Executed ViewResult - view Index executed in 8.4245ms.
+2020-02-18 20:01:39.048 +02:00 [INF] Executed action RCB.TypeScript.Controllers.MainController.Index (Tractors) in 8.7979ms
+2020-02-18 20:01:39.048 +02:00 [INF] Executed endpoint 'RCB.TypeScript.Controllers.MainController.Index (Tractors)'
+2020-02-18 20:01:39.048 +02:00 [INF] Request finished in 9.5632ms 200 text/html; charset=utf-8
+2020-02-18 20:01:39.116 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/main-client.js?v=GkXQXVGCzQ38PIWoeIiv3EAtBQ1VyQx8xY-gpaBGPrU  
+2020-02-18 20:01:39.130 +02:00 [INF] Request finished in 13.4544ms 200 application/javascript; charset=UTF-8
+2020-02-18 20:01:39.371 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.css.map  
+2020-02-18 20:01:39.376 +02:00 [INF] Sending file. Request path: '/dist/vendor.css.map'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.css.map'
+2020-02-18 20:01:39.377 +02:00 [INF] Request finished in 5.6127ms 200 text/plain
+2020-02-18 20:01:39.687 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/vendor.js.map  
+2020-02-18 20:01:39.688 +02:00 [INF] Sending file. Request path: '/dist/vendor.js.map'. Physical path: 'C:\Users\nick\Projects\Tractors\wwwroot\dist\vendor.js.map'
+2020-02-18 20:01:39.689 +02:00 [INF] Request finished in 2.0751ms 200 text/plain
+2020-02-18 20:01:39.691 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/main-client.js.map  
+2020-02-18 20:01:39.692 +02:00 [INF] Request finished in 0.997ms 200 application/json; charset=UTF-8
+2020-02-18 20:01:40.030 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:64099/dist/__webpack_hmr  
+2020-02-18 20:02:04.154 +02:00 [INF] Received SIGINT. Waiting for .NET process to exit...
+2020-02-18 20:02:04.154 +02:00 [INF] Received SIGINT. Waiting for .NET process to exit...
+2020-02-18 20:02:09.253 +02:00 [INF] Request finished in 139989.908ms 200 text/event-stream; charset=utf-8
+2020-02-18 20:02:09.253 +02:00 [INF] Request finished in 29223.2554ms 200 text/event-stream; charset=utf-8

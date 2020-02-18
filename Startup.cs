@@ -1,11 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using RCB.TypeScript.Extensions.Microsoft.Extensions.DependencyInjection;
+using RCB.TypeScript.Infrastructure;
+using RCB.TypeScript.Services;
+using Serilog;
 
-namespace Tractors
+namespace RCB.TypeScript
 {
     public class Startup
     {
@@ -17,57 +26,68 @@ namespace Tractors
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            Configuration.GetSection("AppSettings").Bind(AppSettings.Default);
 
-            // In production, the Angular files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
+            services.AddLogging(loggingBuilder =>
+                loggingBuilder
+                    .AddSerilog(dispose: true)
+                    .AddAzureWebAppDiagnostics()
+                );
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddNodeServices();
+            services.AddSpaPrerenderer();
+
+            // Add your own services here.
+            services.AddScoped<AccountService>();
+            services.AddScoped<PersonService>();
+
+            return services.BuildServiceProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseMiddleware<ExceptionMiddleware>();
+
+            // Build your own authorization system or use Identity.
+            app.Use(async (context, next) =>
+            {
+                var accountService = (AccountService)context.RequestServices.GetService(typeof(AccountService));
+                var verifyResult = accountService.Verify(context);
+                if (!verifyResult.HasErrors)
+                {
+                    context.Items.Add(Constants.HttpContextServiceUserItemKey, verifyResult.Value);
+                }
+                await next.Invoke();
+                // Do logging or other work that doesn't write to the Response.
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
+                    HotModuleReplacement = true
+                });
             }
             else
             {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseExceptionHandler("/Main/Error");
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
-            if (!env.IsDevelopment())
+
+            app.UseMvc(routes =>
             {
-                app.UseSpaStaticFiles();
-            }
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Main}/{action=Index}/{id?}");
 
-            app.UseSpa(spa =>
-            {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
-
-                spa.Options.SourcePath = "ClientApp";
-                
-                spa.UseSpaPrerendering(options =>
-                {
-                    options.BootModulePath = $"{spa.Options.SourcePath}/dist-server/main.js";
-                        options.BootModuleBuilder = env.IsDevelopment()
-                            ? new AngularCliBuilder(npmScript: "build:ssr")
-                                : null;
-                    options.ExcludeUrls = new[] { "/sockjs-node" };
-                });
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Main", action = "Index" });
             });
         }
     }
