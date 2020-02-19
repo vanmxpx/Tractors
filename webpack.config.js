@@ -80,6 +80,7 @@ module.exports = (env) => {
                                 options: {
                                     // Disable type checker - we will use it in fork plugin.
                                     transpileOnly: true
+
                                 }
                             },
                             'ts-nameof-loader']
@@ -91,13 +92,13 @@ module.exports = (env) => {
                 ]
             },
             plugins: [
-                new ForkTsCheckerWebpackPlugin(),
-                // Moment.js is an extremely popular library that bundles large locale files
-                // by default due to how Webpack interprets its code. This is a practical
-                // solution that requires the user to opt into importing specific locales.
-                // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
-                // You can remove this if you don't use Moment.js:
-                new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+                new ForkTsCheckerWebpackPlugin({memoryLimit: 512}),
+                // // Moment.js is an extremely popular library that bundles large locale files
+                // // by default due to how Webpack interprets its code. This is a practical
+                // // solution that requires the user to opt into importing specific locales.
+                // // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
+                // // You can remove this if you don't use Moment.js:
+                // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
             ].concat(isDevBuild ? [
                 // Development.
 
@@ -145,6 +146,7 @@ module.exports = (env) => {
     const clientBundleOutputDir = './wwwroot/dist';
     const clientBundleConfig = merge(sharedConfig(), {
         entry: { 'main-client': './ClientApp/boot-client.tsx' },
+        
         module: {
             rules: [
                 { test: /\.css$/, use: isDevBuild ? ['style-loader', 'css-loader'] : [MiniCssExtractPlugin.loader, 'css-loader'] },
@@ -161,6 +163,7 @@ module.exports = (env) => {
             tls: 'empty',
             child_process: 'empty',
         },
+
         plugins: [
             new webpack.DllReferencePlugin({
                 context: __dirname,
