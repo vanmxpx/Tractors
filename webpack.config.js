@@ -92,7 +92,7 @@ module.exports = (env) => {
                 ]
             },
             plugins: [
-                new ForkTsCheckerWebpackPlugin({memoryLimit: 512}),
+                new ForkTsCheckerWebpackPlugin({memoryLimit: 256}),
                 // // Moment.js is an extremely popular library that bundles large locale files
                 // // by default due to how Webpack interprets its code. This is a practical
                 // // solution that requires the user to opt into importing specific locales.
