@@ -29,7 +29,404 @@
         </nav>
     </header> *@
 
+      <div class="page text-center">
 
+          <header id="intro" class="page-header">
+
+            <div class="rd-navbar-wrap" style="<?php if(isset($disable_menu)){ echo 'display: none';}?>">
+                <nav class="rd-navbar" data-rd-navbar-lg="rd-navbar-fixed">
+                    <div class="rd-navbar-inner">
+
+                        <div class="rd-navbar-panel">
+
+                            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar"><span></span></button>
+
+
+                            <div class="rd-navbar-brand">
+
+                                    <span class="icon icon-md icon-primary icon-primary-variant-1">
+                                        <img src="<?=$logo?>"  alt="">
+                                    </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rd-navbar-nav-wrap">
+
+                            <ul class="rd-navbar-nav">
+                                <li>
+                                    <a href="#intro">
+                                        <span><?=$menu[0]?></span>
+                                    </a>
+                                </li>
+                                <?php if($utm_content === 'mototraktor_kupit_v2'): ?>
+                                    <li>
+                                        <a href="#vidos">
+                                            <span><?=$menu[2]?></span>
+                                        </a>
+                                    </li>
+                                <? endif; ?>
+
+                                <li>
+                                    <a href="#information">
+                                        <span><?=$menu[1]?></span>
+                                    </a>
+                                </li>
+
+                                
+
+                                <?php if($utm_content === 'mototraktor_kupit_v2'): ?>
+                                    <li>
+                                        <a href="#models">
+                                            <span><?=$menu[3]?></span>
+                                        </a>
+                                    </li>
+                                <? endif; ?>
+
+                                <?php if($utm_content === 'pricep'): ?>
+                                    <li>
+                                        <a href="#models">
+                                            <span><?=$menu[2]?></span>
+                                        </a>
+                                    </li>
+                                <? endif; ?>
+                                    <?php if($utm_content === 'pochvofrez'): ?>
+                                <li>
+                                        <a href="#models">
+                                            <span><?=$menu[2]?></span>
+                                        </a>
+                                    </li>
+                                    <? endif; ?>
+                                <? if(!isset($s3)): ?>
+                                    <li>
+                                        <a href="#advantages">
+                                            <span><?=$menu[3]?></span>
+                                        </a>
+                                    </li>
+                                <? endif; ?>
+								<? if(!($utm_content === 'mototraktor_kupit_vd' || 
+                                    $utm_content === 'mototraktor_kupit_vd-ua' ||
+                                    $utm_content === 'mototraktor_kupit_video' ||
+                                    $utm_content === 'mototraktor_kupit_v2'
+                                ) && isset($video)): ?>
+                                    
+                                <? endif;?>
+                                <li>
+                                    <a href="#tractors">
+                                        <span><?=$menu[4]?></span>
+                                    </a>
+                                </li>
+<!--                                 <li>
+                                    <a href="#gallery">
+                                        <span>Gallery</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#partners">
+                                        <span>Our Partners</span>
+                                    </a>
+                                </li> -->
+
+                                <li>
+                                    <a href="#contacts">
+                                        <span><?=$menu[5]?></span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            
+            <?php if($utm_content === 'mototraktor_kupit_vd'): ?>
+                <section id="video" style="height: 70%; width: 100%">
+                   <div class="relative-block" style="position: relative;">
+                        <div class="video-block" style="display: block;">
+                            <video playsinline autoplay muted loop width="100%" id="video1" style="display: inline-block;">
+                                <source src="https://tdtz.in.ua/video/minitracktor.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </section>
+            <?php endif; ?>
+
+            
+
+            <section class="<?php if(isset($first_form)){ echo '';}?> well-xl1 bg-image bg-fixed position__relative" style="background-image: url(<?=$s1_background?>);">
+
+                <div class="container">
+
+                    <div class="row row-md-justify text-lg-left">
+                        <div class="col-md-2">
+                            <address class="contact-info">
+                                <div class="box">
+                                    <div class="box__cnt">
+                                        <span class="free-phone ringo-del"><a href="callto:#"><span class="ringo-phone"><span class="oper">+38&nbsp</span><div class="code-wrap"><span class="ks"><img src="images/ks.png" alt="" width="20">(068)</span><span class="vd"><img src="images/vd.png" alt="" width="20">(050)</span><span class="lc"><img src="images/lc.png" alt="" width="20">(073)</span></div><span class="reshta"><?=$phone[0]?></span></span></a></span>
+                                        <span class="free-phone ringo-del"><a href="callto:#"><span class="ringo-phone">
+                                    </div>
+                                    <a href="#recall-dialog" title="Кнопка Мы перезвоним" class="we-call-back popup-with-zoom-anim"><?=$recall_dialog?></a>
+                                <!--      <div class="free-call-text"><?=$free_call_text?></div> -->
+                                </div>
+                            </address>
+                        </div>
+                        <div class="col-md-preffix-1 col-md-3 col-lg-2">
+
+                            <div class="rd-navbar-brand">
+
+                                    <span class="icon icon-md icon-primary icon-primary-variant-2">
+                                        <img src="<?=$logo?>"  alt="">
+                                    </span>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+<!--                             <address class="contact-info preffix-1">
+                                <div class="box">
+                                    <div class="box__cnt list-phone-head ringo-phone">
+                                        <?=$phone[1]?><br>
+                                        <?=$phone[2]?><br>
+                                        <?=$phone[3]?>
+                                    </div>
+                                </div>
+                            </address> -->
+                        </div>
+                    </div>
+
+                    <?php if(isset($first_form)): ?>
+                    <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 text-left form-first-col" >
+                    <?php endif; ?>
+
+                        <h1 style="<?= isset($s1_h1_style) ? $s1_h1_style : '';?>">
+                            <?=$s1_h1?>
+                        </h1>
+
+                        <?if(isset($this1_credit)):?>
+                            <div class="but-text"><?=$but_text_credit?></div>
+                            <div class="this">
+                                <div class="this1"> <img src="images/star.png"  alt=""> <?=$this1_credit[0]?></div>
+                                <div class="this2"> <img src="images/star.png"  alt=""> <?=$this1_credit[1]?></div>
+                                <div class="this3"> <img src="images/star.png"  alt=""> <?=$this1_credit[2]?></div>
+                            </div>
+                        <?endif;?>
+
+						<?if($but_text != ""):?>
+							<div class="but-text"><?=$but_text?></div>
+						<?endif;?>
+						<?if(is_array($this1)):?>
+							<div class="this">
+								<div class="this1"> <img src="images/star.png"  alt=""> <?=$this1[0]?></div>
+								<div class="this2"> <img src="images/star.png"  alt=""> <?=$this1[1]?></div>
+								<div class="this3"> <img src="images/star.png"  alt=""> <?=$this1[2]?></div>
+							</div>
+						<?elseif($this1=='запч' || $this1=='запч_кред'):?>
+							<div class="container">
+								<div class="row kredit-box">
+									<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center " >
+										<img src="images/tm-logo/foton.png">
+									</div>
+									<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center " >
+										<img src="images/tm-logo/2.png">
+									</div>
+									<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center " >
+										<img src="images/tm-logo/dfm.png">
+									</div>
+									<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center " >
+										<img src="images/tm-logo/1.png">
+									</div>
+									<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center " >
+										<img src="images/tm-logo/dw.png">
+									</div>
+									<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center " >
+										<img src="images/tm-logo/3.png">
+									</div>
+								</div>
+
+                                <div class="row kredit-box2">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center " >
+										<div>Jinma (Mahindra)</div>
+										<div>YTO</div>
+										<div>Xingtai</div>
+										<div>FengShou</div>
+										<div>Luzhong</div>
+										<div>Changlin Deutz-Fahr</div>
+										<div>ДТЗ</div>
+										<div>Forte</div>
+									</div>
+								</div>
+							</div>
+                        <?elseif($this1=='запч2' || $this1=='запч_кред2'):?>
+                            <div class="row kredit-box">
+                                <div class="container">
+                                    <div class="row logotm-box1">
+
+                                        <?if(isset($ukr)):?>
+                                            <h1><span class="mini-t">Оригінальні запчастини для мотоблоків</span></h1>
+                                        <?else:?>
+                                            <h1><span class="mini-t"> ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ ДЛЯ МОТОБЛОКОВ</span></h1>
+                                        <?endif;?>
+
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/15-kentavr.png">
+                                        </div>
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/16-zubr.png">
+                                        </div>
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/17-forte.png">
+                                        </div>
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/18-gardenScout.png">
+                                        </div>
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/WEIMA.png">
+                                        </div>
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/neva.png">
+                                        </div>
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/sadko.png">
+                                        </div>
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/salut.png">
+                                        </div>
+                                        <div class="logotm-item1">
+                                            <img src="images/zapchasti_motoblok/logo/zirka.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?elseif($this1=='запч3' || $this1=='запч_кред3'):?>
+                            <div class="row kredit-box">
+                                <div class="container">
+                                    <div class="row logotm-box2">
+
+                                        <?if(isset($ukr)):?>
+                                            <h1><span class="mini-t">Оригінальні запчастини для</span></h1>
+                                        <?else:?>
+                                            <h1><span class="mini-t">ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ К МИНИТРАКТОРАМ</span></h1>
+                                        <?endif;?>
+
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/1-foton.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/10-chery.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/11-shifeng-group.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/12-belarus.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/13-iseki.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/14-kioti.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/2-dfam.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/3-jinma.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/4-YTO.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/5-dtz.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/6-bulat.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/7-xingtai.png">
+                                        </div>
+                                        <div class="logotm-item2 item-l">
+                                            <img src="images/zapchasti_minitraktor/logo/8-deutzFahr.png">
+                                        </div>
+                                        <div class="logotm-item2">
+                                            <img src="images/zapchasti_minitraktor/logo/9-dw.png">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <?endif;?>
+						<?if($this1=='кред' || $this1=='запч_кред' || $this1=='запч_кред2' || $this1=='запч_кред3'):?>
+                           <?if(isset($but_text_kred)):?>
+                                <div class="but-text"><?=$but_text_kred?></div>
+                            <?endif;?>
+							<div class="this">
+                                <a href="#order-dialog" class="btn btn-md btn-primary bt-line bt1 popup-with-zoom-anim" style="" >
+                                    <?=$s1_bt1?>
+                                </a>
+								<a class="btn btn-md btn-primary bt-line bt-credit" href="javascript:void(0)" type="button" onclick="if (typeof(kreditmarket_popup_win)!='undefined') kreditmarket_popup_win.close(); kreditmarket_popup_win=window.open('https://agents.kreditmarket.ua/partners/_general/v01/?uid=ho2q467358049410&product_id=<?=$product_id?>&product_name=<?=$product_name?>&product_price=<?=str_replace(" ","",$price)?>&product_url=<?=$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]?>', 'gener','width=780,height=360,top='+((screen.height-360)/2)+',left='+((screen.width-780)/2)+',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no')">
+                                    <span>
+                                        РАССЧИТАТЬ <br>
+                                        <span>самостоятельно</span>
+                                    </span>
+                                    <img src="images/calc.png"  alt="">
+                                </a>
+							</div>
+
+						<?else:?>
+                            <a href="#order-dialog" class="btn btn-md btn-primary bt1 popup-with-zoom-anim" style="<?if($this1=='кред') {echo 'font-weight: 300;padding: 12px 28px 10px;';}?>" >
+    							<?=$s1_bt1?>
+    						</a>
+                        <?endif;?>
+
+
+                    <?php if(isset($first_form)): ?></div><?php endif; ?>
+
+                    <?php if(isset($first_form)): ?>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 text-left form-first-col" style="">
+                            <div class="<?= $first_form['class']?>" style="background-image: url(<?= $first_form['background']?>);">
+                                <?= $first_form['body']?>
+                                <?= $first_form['form']?>
+                            </div>
+                        </div>
+                        </div>
+                    <?php endif; ?>
+
+                </div>
+                
+                <?php if($utm_content === 'minitraktor_zubr' ||
+                         $utm_content === 'mototraktor_kupit_video' ||
+                         $utm_content === 'mototraktor_kupit_vd-ua' ||
+                         $utm_content === 'mototraktor_bulat-120' || 
+                         $utm_content === 'mototraktor_kupit_v2' || 
+                         $utm_content === 'mototraktor_kredit_v2' ||
+                         $utm_content === 'mototraktor_dostavka_v2' ||
+                         $utm_content === 'mototraktor_chernivci-ua' || 
+                         $utm_content === 'mototraktor_chernovci' ||
+                         $utm_content === 'mototraktor_garden-scout-t15' ||
+                         $utm_content === 'mototraktor_garden-scout-t18' ||
+                         $utm_content === 'mototraktor_khmelnitsky' ||
+                         $utm_content === 'mototraktor_yarilo' || 
+                         $utm_content === 'mototraktor_kyiv' ||
+                         $utm_content === 'mototraktor_ukr' ||
+                         $utm_content === 'mototraktor_lviv_v2'): ?>
+                    <!--<div class="videoContainer">
+                        <div class="overlay"></div>
+                        <video playsinline autoplay muted loop width="100%" class="video-bg">
+                            <source src="https://tdtz.in.ua/video/dmtz-160.mp4" type="video/mp4">
+                        </video>
+                    </div>-->
+                <?php endif; ?>
+                
+                
+
+            </section>
+
+        </header>
+        
+        </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
