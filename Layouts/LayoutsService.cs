@@ -15,5 +15,10 @@ namespace Tractors.Layouts
                 { "mototraktor_kupit_v2", new MototraktorKupit() }, 
             }.ToImmutableDictionary();
         }
+
+        public ILayout FindLayout(string layoutName) 
+        { 
+            return store[layoutName];
+        }
     }
 }

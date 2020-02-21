@@ -5,7 +5,13 @@ namespace Tractors.Layouts.LayoutItems
 {
     public class MototraktorKupit : ILayout
     {
+
+        public override string ToString() 
+        { 
+            return "mototraktor_kupit_v2";
+        }
         public string advantages_block { get; private set; } = null;
+        public string but_text_kred { get; private set; } = null;
 
         public bool? disable_main { get; private set; } = null;
 
@@ -17,21 +23,21 @@ namespace Tractors.Layouts.LayoutItems
 
         public bool? ukr { get; private set; } = null;
 
-        public ImmutableList<string> this1 { get; private set; } = null;
+        public List<string> this1 { get; private set; } = null;
 
         public string but_text { get; private set; } = null;
 
         public string but_text_credit { get; private set; } = null;
 
-        public ImmutableList<string> this1_credit { get; private set; } = null;
+        public List<string> this1_credit { get; private set; } = null;
 
-        public ImmutableList<string> name { get; private set; } = null;
+        public List<string> name { get; private set; } = null;
 
         public string price { get; private set; } = null;
 
         public string logo { get; private set; } = null;
 
-        public ImmutableList<string> menu { get; private set; } = null;
+        public List<string> menu { get; private set; } = null;
 
         public bool? disable_menu { get; private set; } = null;
 
@@ -55,9 +61,27 @@ namespace Tractors.Layouts.LayoutItems
 
         public string recall_dialog { get; private set; } = null;
 
-        public ImmutableList<string> phone => SharedItems.phone;
+        public List<string> phone => SharedItems.phone;
 
         public string video { get; private set; } = null;
+
+        public string s2_this_bu_title { get; private set; } = null;
+        
+        public string s2_this_left_but { get; private set; } = null;
+        public string s2_left_this2_style { get; private set; } = null;
+        
+        public string s2_left_title { get; private set; } = null;
+        public List<string> s2_this_left { get; private set; } = null;
+
+        public List<string>? s2_this_bu { get; private set; } = null;
+
+        public string s2_right_style { get; private set; } = null;
+
+        public string s2_right_title { get; private set; } = null;
+
+        public List<string> s2_this_right { get; private set; } = null;
+
+        public string s2_right_this2_style { get; private set; } = null;
 
         public MototraktorKupit() 
         { 
@@ -66,7 +90,7 @@ namespace Tractors.Layouts.LayoutItems
             product_id = null;
             video = "tracktor_960x350.mp4";
 
-		    name = new List<string> { "минитрактор", "минитрактора", "минитракторы", "минитракторов" }.ToImmutableList();
+		    name = new List<string> { "минитрактор", "минитрактора", "минитракторы", "минитракторов" };
 
 		    price = "56 000";
 
@@ -78,8 +102,8 @@ namespace Tractors.Layouts.LayoutItems
 		   // description = "Купить "+ name[0] + "";
 		    s1_h1 = "ИЩЕТЕ ГДЕ КУПИТЬ <br> "+ name[0] + "? <br> <span class='mini-t'>"+ name[2] + " ОТ <span class='mini-p'>" + price +"</span> ГРН</span><div>3 года гарантии</div>";
 		    s1_bt1 = "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ";
-		    //s2_left_title = "" + name[2] + " <span>ДМТЗ</span>";
-		    //s2_right_title = "<span>ДРУГИЕ</span> " + name[2];
+		    s2_left_title = "" + name[2] + " <span>ДМТЗ</span>";
+		    s2_right_title = "<span>ДРУГИЕ</span> " + name[2];
 		    //s3_h1 = "РАССЧИТАЙТЕ СТОИМОСТЬ <br>  <span class='tw'>ВАШЕГО "+ name[1] + "</span> <br> <span class='with-line'>УЖЕ СЕЙЧАС!</span>";
 
 		    first_form = new Dictionary<string, string> {
@@ -134,11 +158,11 @@ namespace Tractors.Layouts.LayoutItems
 		// s7_background = '../images/mototraktor/s7.jpg';
 
 
-		menu = new List<string> { "Главная", "Преимущества","Обзор","Модели", "Рассчитать", "Отзывы", "Контакты" }.ToImmutableList();
+		menu = new List<string> { "Главная", "Преимущества","Обзор","Модели", "Рассчитать", "Отзывы", "Контакты" };
 		recall_dialog = "МЫ ПЕРЕЗВОНИМ!";
 		// free_call_text = "Звонок бесплатный";
 		but_text = "ПОКУПАЙТЕ У ПРОИЗВОДИТЕЛЯ! ЭТО:";
-		this1 = new List<string> { "ВЫГОДНО", "НАДЕЖНО", "БЕЗОПАСНО"}.ToImmutableList();
+		this1 = new List<string> { "ВЫГОДНО", "НАДЕЖНО", "БЕЗОПАСНО"};
 
 		advantages_block = "<section class='bg-image bg-fixed why-choose-section'>"
                             +"<div class='container'>"
@@ -345,49 +369,49 @@ namespace Tractors.Layouts.LayoutItems
 
                         +"</section>";
 
-		// s2_left_this2_style = "";
-		// s2_right_style = "padding-bottom: 88px;";
-		// s2_right_this2_style = "margin-top: 20px;";
-// 		s2_this_left = new List<string> { 
-// 			"Являемся заводом-изготовителем",
-// 			"Работаем без посредников",
-// 			"Даем гарантию 3 года",
-// 			"Предоставляем сервис по всей Украине",
-// 			"Бесплатная доставка",
-// 			"Доставка машиной завода-изготовителя",
-// 			"Демонстрируем работу трактора при получении",
-// 			"Оплата только после получения",
-// 			"На связи 24/7 до и после покупки",
-// 			"С вами работает личный менеджер",
-// 			"Вас обслуживает специалист по сельхозтехнике",
-// 			"100% возврат денег",
-// 			"Накопительные скидки и приятные бонусы",
-// 			// "Качественная украинская сборка",
-// 			// "Качественные комплектующие",
-// 			// "Навесное оборудование от производителя по оптовым ценам и  бесплатной доставкой",
-// 			// "В комплекте с мототрактором идет почвофреза 110 см и 2-х корпусный плуг",
-// 		}.ToImmutableList();
-// 		s2_this_left_but = "УЗНАТЬ ПОДРОБНЕЕ";
+		s2_left_this2_style = "";
+		//s2_right_styles2_right_style = "padding-bottom: 88px;";
+		s2_right_this2_style = "margin-top: 20px;";
+		s2_this_left = new List<string> { 
+			"Являемся заводом-изготовителем",
+			"Работаем без посредников",
+			"Даем гарантию 3 года",
+			"Предоставляем сервис по всей Украине",
+			"Бесплатная доставка",
+			"Доставка машиной завода-изготовителя",
+			"Демонстрируем работу трактора при получении",
+			"Оплата только после получения",
+			"На связи 24/7 до и после покупки",
+			"С вами работает личный менеджер",
+			"Вас обслуживает специалист по сельхозтехнике",
+			"100% возврат денег",
+			"Накопительные скидки и приятные бонусы",
+			// "Качественная украинская сборка",
+			// "Качественные комплектующие",
+			// "Навесное оборудование от производителя по оптовым ценам и  бесплатной доставкой",
+			// "В комплекте с мототрактором идет почвофреза 110 см и 2-х корпусный плуг",
+		};
+ 		s2_this_left_but = "УЗНАТЬ ПОДРОБНЕЕ";
 
-// 		s2_this_right = array(
-// 			"Являются посредниками",
-// 			"Взимают плату за посредничество",
-// 			"Гарантия 1 год либо не дают гарантий вовсе",
-// 			"Не имеют собственного сервиса",
-// 			"Вы платите за доставку",
-// 			"Доставляют сторонними курьерскими службами",
-// 			"Вам просто отгружают товар",
-// 			"Требуют 100% предоплату",
-// 			"Не отвечают на звонки, бросают трубки",
-// 			"Каждый раз новый менеджер",
-// 			"Вас консультирует обычный “продажник”",
-// 			"Вам уже не вернут Ваши средства",
-// 			"Не имеют партнерской программы",
+		s2_this_right = new List<string> {
+			"Являются посредниками",
+			"Взимают плату за посредничество",
+			"Гарантия 1 год либо не дают гарантий вовсе",
+			"Не имеют собственного сервиса",
+			"Вы платите за доставку",
+			"Доставляют сторонними курьерскими службами",
+			"Вам просто отгружают товар",
+			"Требуют 100% предоплату",
+			"Не отвечают на звонки, бросают трубки",
+			"Каждый раз новый менеджер",
+			"Вас консультирует обычный “продажник”",
+			"Вам уже не вернут Ваши средства",
+			"Не имеют партнерской программы",
 
-// 			// "Поставляют некачественную китайскую сборку",
-// 			// "Некачественные китайские комплектующие",
-// 			// "Указывают цену на трактор без комплекта",
-// 		);
+			// "Поставляют некачественную китайскую сборку",
+			// "Некачественные китайские комплектующие",
+			// "Указывают цену на трактор без комплекта",
+		};
 
 
 // 		s3_form = array(

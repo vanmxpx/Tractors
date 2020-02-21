@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Tractors.Layouts;
 
 namespace Tractors
 {
@@ -33,6 +34,8 @@ namespace Tractors
             {
                 services.AddRazorPages();
             }
+
+            services.AddSingleton<LayoutsService>(new LayoutsService());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

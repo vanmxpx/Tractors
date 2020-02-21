@@ -5,6 +5,21 @@ namespace Tractors.Layouts
 {
     public interface ILayout
     {
+        string ToString();
+        string? s2_this_bu_title { get; }
+        
+        string? s2_right_style { get; }
+        string? s2_right_title { get; }
+        List<string>? s2_this_right { get; }
+        string? s2_right_this2_style { get; }
+        
+        string? s2_left_title { get; }
+        string? s2_this_left_but { get; }
+        string? s2_left_this2_style { get; }
+        List<string>? s2_this_bu { get; }
+        
+        List<string>? s2_this_left { get; }
+        string? but_text_kred { get; }
         // html
         string? advantages_block { get;  }
         string video { get;  }
@@ -14,14 +29,14 @@ namespace Tractors.Layouts
         string s1_bt1 { get;  }
         bool? ukr { get;  }
         //  string | string[];
-        ImmutableList<string> this1 { get;  }
+        List<string> this1 { get;  }
         string but_text { get;  } 
         string? but_text_credit { get;  } 
-        ImmutableList<string>? this1_credit { get;  }  
-        ImmutableList<string> name { get;  }
+        List<string>? this1_credit { get;  }  
+        List<string> name { get;  }
         string price { get;  }
         string logo { get;  }
-        ImmutableList<string> menu { get;  }
+        List<string> menu { get;  }
         bool? disable_menu { get;  }
         
         Dictionary<string, string>? first_form { get;  }
@@ -34,6 +49,6 @@ namespace Tractors.Layouts
         string s4_background { get;  }
         string s5_background { get;  }
         string recall_dialog { get;  }
-        ImmutableList<string> phone { get;  }
+        List<string> phone { get;  }
     }
 }
