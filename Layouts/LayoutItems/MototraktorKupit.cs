@@ -197,7 +197,7 @@ namespace Tractors.Layouts.LayoutItems
                         +"</section>"
                         +"<section class='back3 text-center' id='vidos'>"
                         +"<h2>ВИДЕО ОБЗОР</h2>"
-                        +"<iframe width='560' height='315' src='https://www.youtube.com/embed/xRt6fYL9QNA' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                        +"<iframe width='560' height='315' data-loader='youtube' data-src='xRt6fYL9QNA' frameborder='0'  allowfullscreen></iframe>"
                         +"</section>"
 
 

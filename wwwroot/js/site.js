@@ -734,3 +734,7 @@ $('.green-line_button').on('click', function () {
 $('.bt-popup').on('click', function () {
     ga('send', 'event', 'click', 'button'); fbq('track', 'Lead');
 });
+
+$(function() {
+    $("iframe[data-src]").Lazy();
+});
