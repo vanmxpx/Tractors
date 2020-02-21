@@ -5,9 +5,9 @@
     Layouts.ILayout utm_content = Model.utm_content;
 }
 
-@* @if( utm_content.advantages_block != null ) { 
+@if( utm_content.advantages_block != null ) { 
     @Html.Raw(utm_content.advantages_block);
-} *@
+}
 
 @{
     string informationStyle = $"background-image: url({@utm_content.s2_background})";
