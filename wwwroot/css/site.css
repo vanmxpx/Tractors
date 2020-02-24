@@ -6,7 +6,9 @@
     justify-content: space-around;
     flex-direction: column;
     padding: 150px 0;
-    background: url(../images/back3.jpg)no-repeat center;
+    /* background: url(../images/back3.jpg)no-repeat center; TODO: Remove at all pages */
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -15884,7 +15886,7 @@ footer .copyright {
 
 .why-choose-section {
     padding: 9em 0;
-    background-image: url("../images/mototraktor/s6.jpg");
+    /* background-image: url("../images/mototraktor/s6.jpg"); TODO:  */
 }
 
 
@@ -15900,6 +15902,23 @@ footer .copyright {
     margin: 50px 0 25px;
 }
 
+/* .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  } */
+
 
 
 
@@ -15909,7 +15928,7 @@ footer .copyright {
     width: 100%;
     min-height: 820px;
     background: #141613;
-    background-image: url("../images/mototraktor/s7.jpg");
+    /* background-image: url("images/mototraktor/s7.jpg"); // TODO: check all why-choose-wrapper */
     /*background-size: cover;*/
     background-position: center center;
     background-repeat: no-repeat;

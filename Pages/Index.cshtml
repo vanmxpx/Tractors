@@ -10,14 +10,15 @@
 }
 
 @{
-    string informationStyle = $"background-image: url({@utm_content.s2_background})";
+    string informationStyle = "";
     if(@utm_content.s2_this_bu != null)
     {
         informationStyle += "padding-top: 2.3rem; padding-bottom: 2.4rem;";
     }
 }
 <section id="information" 
-        class="well-xl text-sm-left bg-image bg-fixed bg-image-2" 
+        class="lazy well-xl text-sm-left bg-image bg-fixed bg-image-2"
+        data-src="@utm_content.s2_background"
         style=@informationStyle>
     <div class="container">
 
@@ -76,43 +77,28 @@
         </div>
     </div>
 </section>
-@* 
+ 
 <!--block  мототракторів-->
-<?php if($utm_content === 'mototraktor_kupit' ||
-        $utm_content === 'mototraktor_lviv' ||                         
-        $utm_content === 'mototraktor_ukr' ||                                                  
-        $utm_content === 'mototraktor_lutsk' ||                                                  
-        $utm_content === 'mototraktor_dostavka' ||                                                                           
-        $utm_content === 'mototraktor_kredit' ||
-        $utm_content === 'mototraktor_kupit_v2'): ?>
-    <section id="models" class="well-xl3 bg-image bg-fixed bg-image-3" style="background-image: url(../images/models.jpg); padding-top: 30px!important; padding-bottom: 30px!important;">
+@if (utm_content.ToString() == "mototraktor_kupit" ||
+        utm_content.ToString() == "mototraktor_lviv" ||                         
+        utm_content.ToString() == "mototraktor_ukr" ||                                                  
+        utm_content.ToString() == "mototraktor_lutsk" ||                                                  
+        utm_content.ToString() == "mototraktor_dostavka" ||                                                                           
+        utm_content.ToString() == "mototraktor_kredit" ||
+        utm_content.ToString() == "mototraktor_kupit_v2") {
+    <section id="models" class="lazy well-xl3 bg-image bg-fixed bg-image-3" data-src="images/models.jpg" style="padding-top: 30px!important; padding-bottom: 30px!important;">
         <div class="container">
-            <!--  <div class="row">
-                <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/mototr/tr1.jpg" alt="" style="width: 100%;">
-                    <div class="info-tr-wrap" style="margin-top: 25px;"> 
-                        <span style="float: left; font-size: 20px; font-weight: 700;"><b>Garden Star </b><span style="color: #4DA712;"><b>T16 </b></span></span>
-                        <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
-                    </div>
-                </div>
-                <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/mototr/tr2.jpg" alt="" style="width: 100%;">
-                    <div class="info-tr-wrap" style="margin-top: 25px;"> 
-                        <span style="float: left; font-size: 20px; font-weight: 700;"><b>Garden Star </b><span style="color: #4DA712;"><b>T18</b></span></span>
-                        <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
-                    </div>
-                </div>
-            </div> -->
+
             <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/mototr/tr3.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/mototr/tr3.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>160 МАСТЕР</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/mototr/tr4.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/mototr/tr4.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>180 МАСТЕР</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -121,7 +107,7 @@
             </div>
         </div>
         <style type="text/css">
-            @media screen and (max-width: 410px){
+            @@media screen and (max-width: 410px){
                 #models a{
                     width: 100%;
                     margin:5px 0 25px!important;
@@ -132,28 +118,28 @@
             }
         </style>
     </section>
-<?php endif; ?>
+}
 <!--block мототракторів end-->
 
 
 <!--block мінітракторів-->
-<?php if($utm_content === 'minitraktor_kupit' ||
-        $utm_content === 'minitraktor_kredit' ||
-        $utm_content === 'minitraktor_dostavka' ||  
-        $utm_content === 'minitraktor_lviv'): ?>
-    <section id="models" class="well-xl3 bg-image bg-fixed bg-image-3" style="background-image: url(../images/models.jpg); padding-top: 30px!important; padding-bottom: 30px!important;">
+@if(utm_content.ToString() == "minitraktor_kupit" ||
+        utm_content.ToString() == "minitraktor_kredit" ||
+        utm_content.ToString() == "minitraktor_dostavka" ||  
+        utm_content.ToString() == "minitraktor_lviv") {
+    <section id="models" class="lazy well-xl3 bg-image bg-fixed bg-image-3" data-src="images/models.jpg" style="padding-top: 30px!important; padding-bottom: 30px!important;">
         <div class="container">
             <div class="row">
                 <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/minitr/tr5.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/minitr/tr5.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>160-МАСТЕР</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/minitr/tr6.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/minitr/tr6.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>180-МАСТЕР</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -161,14 +147,14 @@
                 </div>
             </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/tr1.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/tr1.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>240B</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/tr2.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/tr2.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>244</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -177,14 +163,14 @@
             </div>
             <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/tr3.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/tr3.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>EUROFENG </b><span style="color: #4DA712;"><b>244</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/tr4.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/tr4.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>EUROFENG </b><span style="color: #4DA712;"><b>404</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -193,7 +179,7 @@
             </div>                            
         </div>
         <style type="text/css">
-            @media screen and (max-width: 410px){
+            @@media screen and (max-width: 410px){
                 #models a{
                     width: 100%;
                     margin:5px 0 25px!important;
@@ -204,25 +190,25 @@
             }
         </style>
     </section>
-<?php endif; ?>
+}
 <!--block мінітракторів end-->
 
 <!--block прицеп-->
-<?php if($utm_content === 'pricep' ||
-        $utm_content === 'pricep_kupit'): ?>
-    <section id="models" class="well-xl3 bg-image bg-fixed bg-image-3" style="background-image: url(../images/models.jpg); padding-top: 30px!important; padding-bottom: 30px!important;">
+@if(utm_content.ToString() == "pricep" ||
+        utm_content.ToString() == "pricep_kupit"){
+    <section id="models" class="lazy well-xl3 bg-image bg-fixed bg-image-3" data-src="images/models.jpg" style="padding-top: 30px!important; padding-bottom: 30px!important;">
         <div class="container">
             <div class="row">
                 <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pricep/minitrak.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pricep/minitrak.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>Прицеп для </b><span style="color: #4DA712;"><b>МИНИТРАТКОРА</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pricep/motoblock.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pricep/motoblock.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>Прицеп для </b><span style="color: #4DA712;"><b>МОТОБЛОКА</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -232,7 +218,7 @@
             </div>          
         </div>
         <style type="text/css">
-            @media screen and (max-width: 410px){
+            @@media screen and (max-width: 410px){
                 #models a{
                     width: 100%;
                     margin:5px 0 25px!important;
@@ -243,25 +229,25 @@
             }
         </style>
     </section>
-<?php endif; ?>
+}
 <!--block прицеп end-->
 
 <!--block почвофрези-->
-<?php if($utm_content === 'pochvofreza' ||
-        $utm_content === 'pochvofreza_kupit'): ?>
-    <section id="models" class="well-xl3 bg-image bg-fixed bg-image-3" style="background-image: url(../images/models.jpg); padding-top: 30px!important; padding-bottom: 30px!important;">
+@if(    utm_content.ToString() == "pochvofreza" ||
+        utm_content.ToString() == "pochvofreza_kupit"){
+    <section id="models" class="well-xl3 bg-image bg-fixed bg-image-3" data-src="images/models.jpg" style="padding-top: 30px!important; padding-bottom: 30px!important;">
         <div class="container">
             <div class="row">
                 <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-120.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-120.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>120</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-140.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-140.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>140</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -269,14 +255,14 @@
                 </div>
             </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-80k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-80k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>80К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-110k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-110k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>110К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -285,14 +271,14 @@
             </div>
             <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-125k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-125k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>125К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-140k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-140k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>140К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -301,14 +287,14 @@
             </div>
             <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-150k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-150k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>150К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-160k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-160k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>160К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -317,14 +303,14 @@
             </div>
             <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-180k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-180k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>180К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-200k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-200k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>200К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -333,14 +319,14 @@
             </div>
             <div class="row" style="margin-top: 0!important;">
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-220k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-220k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>220К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
                     </div>
                 </div>
                 <div class="col-sm-6" style="padding: 25px;">
-                    <img src="images/pochvofrez/dmtz-240k.jpg" alt="" style="width: 100%;">
+                    <img class="lazy" data-src="images/pochvofrez/dmtz-240k.jpg" alt="" style="width: 100%;">
                     <div class="info-tr-wrap" style="margin-top: 25px;"> 
                         <span style="float: left; font-size: 20px; font-weight: 700;"><b>ДМТЗ </b><span style="color: #4DA712;"><b>240К</b></span></span>
                         <a style="background: #63D200; color: white; float: right; padding: 4px 60px; border-radius: 6px;" class="popup-with-zoom-anim" href="#recall-dialog">Подробнее</a>
@@ -349,7 +335,7 @@
             </div>                                                        
         </div>
         <style type="text/css">
-            @media screen and (max-width: 410px){
+            @@media screen and (max-width: 410px){
                 #models a{
                     width: 100%;
                     margin:5px 0 25px!important;
@@ -360,15 +346,15 @@
             }
         </style>
     </section>
-<?php endif; ?>
+}
 <!--block почвофрези end-->
 
 
-    <? if(!isset($s3)): ?>
-    <section id="advantages" class="well-xl3 bg-image bg-fixed bg-image-3" style="background-image: url(<?=$s3_background?>);">
+    @if(utm_content.s3 == null ) {
+    <section id="advantages" class="lazy well-xl3 bg-image bg-fixed bg-image-3" data-src='@utm_content.s3_background'>
         <div class="container">
             <h1 class="h1s3 wow pulse" data-wow-delay="0.5s">
-                <?=$s3_h1?>
+                @Html.Raw(utm_content.s3_h1)
             </h1>
         </div>
         <div class="green-line">
@@ -378,26 +364,16 @@
                     <div class="row">
 
 
-                        <!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center form-group wow bounceInUp center" data-wow-delay="1s">
-                            <input type="text" class="form-control" id="name" placeholder="<?=$s3_form['placeholder1']?>" name="name" required data-validation-required-message="<?=$s3_form['required_message1']?>">
-                            <p class="help-block text-danger"></p>
-                        </div> -->
                         <div class="col-lg-2 col-md-2 col"></div>
 
                         <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2 text-center form-group wow bounceInUp center" data-wow-delay="1.1s">
-                            <input type="text" class="form-control" id="phone" placeholder="<?=$s3_form['placeholder2']?>" name="phone" required data-validation-required-message="<?=$s3_form['required_message2']?>">
+                            <input type="text" class="form-control" id="phone" placeholder='@utm_content.s3_form["placeholder2"]' name="phone" required data-validation-required-message='@utm_content.s3_form["required_message2"]'>
                             <p class="help-block text-danger"></p>
                         </div>
 
 
-                        <!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center form-group wow bounceInUp center" data-wow-delay="1.2s">
-                            <input type="text" class="form-control" id="message" placeholder="<?=$s3_form['placeholder3']?>" name="message">
-                            <p class="help-block text-danger"></p>
-                        </div> -->
-
-
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center wow bounceInUp center" data-wow-delay="1.3s">
-                            <button class="calcul" ><span><?=$s3_form['button']?></span></button>
+                            <button class="calcul" ><span>@Html.Raw(@utm_content.s3_form["button"])</span></button>
                         </div>
 
                     </div>
@@ -405,17 +381,17 @@
             </form>
         </div>
     </section>
-<? endif; ?>
+    }
 
 
-<? if(!($utm_content === 'mototraktor_kupit_vd' || 
-        $utm_content === 'mototraktor_kupit_v2' ||
-        $utm_content === 'mototraktor_dostavka_v2' ||
-        $utm_content === 'mototraktor_kupit_vd-ua' || 
-        $utm_content === 'mototraktor_kredit_v2' ||
-        $utm_content === 'mototraktor_lviv_v2' ||
-        $utm_content === 'mototraktor_kupit_video') 
-        && isset($video)): ?>
+@if(!(  utm_content.ToString() == "mototraktor_kupit_vd" || 
+        utm_content.ToString() == "mototraktor_kupit_v2" ||
+        utm_content.ToString() == "mototraktor_dostavka_v2" ||
+        utm_content.ToString() == "mototraktor_kupit_vd-ua" || 
+        utm_content.ToString() == "mototraktor_kredit_v2" ||
+        utm_content.ToString() == "mototraktor_lviv_v2" ||
+        utm_content.ToString() == "mototraktor_kupit_video") 
+        && utm_content.video != null) {
 
 <script>
 
@@ -447,15 +423,15 @@
     
 </script>
 
-<? endif;?>
+}
 
-<section id="tractors" class="well-xl4 bg-image bg-fixed bg-image-4" style="background-image: url(<?=$s4_background?>);">
+<section id="tractors" class="lazy well-xl4 bg-image bg-fixed bg-image-4" data-src="@utm_content.s4_background">
     <div class="container">
         <div class="row wow zoomIn animated" data-wow-delay="0.5s">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <h1 class="text-right-vert">
                     <div>
-                        <span><?=$s4_title?> <hr>
+                        <span>@Html.Raw(utm_content.s4_title) <hr>
                     </div>
                 </h1>
             </div>
@@ -463,67 +439,67 @@
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner vert-line">
 
-                    <div class="item active">
+                    <div class="item fade active">
                         <div class="col-md-6 wow" id="">
                             <div class="iback">
-                                <img src="images/1.jpg" class="img-responsive img-centered" alt="">
+                                <img class="lazy" data-src="images/1.jpg" class="img-responsive img-centered" alt="">
                             </div>
                             <div class="fback">
-                                <div class="client-name"><?=$fback['name1']?></div>
-                                <div class="client-comment"><?=$fback['comment1']?></div>
+                                <div class="client-name">@Html.Raw(utm_content.fback["name1"])</div>
+                                <div class="client-comment">@Html.Raw(utm_content.fback["comment1"])</div>
                             </div>
                         </div>
 
                         <div class="col-md-6 wow" id="">
                             <div class="iback">
-                                <img src="images/2.jpg" class="img-responsive img-centered" alt="">
+                                <img class="lazy" data-src="images/2.jpg" class="img-responsive img-centered" alt="">
                             </div>
                             <div class="fback">
-                                <div class="client-name"><?=$fback['name2']?></div>
-                                <div class="client-comment"><?=$fback['comment2']?></div>
+                                <div class="client-name">@Html.Raw(utm_content.fback["name2"])</div>
+                                <div class="client-comment">@Html.Raw(utm_content.fback["comment2"])</div>
                             </div>
                         </div>
 
                         <div class="col-md-6" id="">
                             <div class="iback">
-                                <img src="images/4.jpg" class="img-responsive img-centered" alt="">
+                                <img class="lazy" data-src="images/4.jpg" class="img-responsive img-centered" alt="">
                             </div>
                             <div class="fback">
-                                <div class="client-name"><?=$fback['name3']?></div>
-                                <div class="client-comment"><?=$fback['comment3']?></div>
+                                <div class="client-name">@Html.Raw(utm_content.fback["name3"])</div>
+                                <div class="client-comment">@Html.Raw(utm_content.fback["comment3"])</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="item">
+                    <div class="item fade">
 
                         <div class="col-md-6" id="">
                             <div class="iback">
-                                <img src="images/3.jpg" class="img-responsive img-centered" alt="">
+                                <img class="lazy" data-src="images/3.jpg" class="img-responsive img-centered" alt="">
                             </div>
                             <div class="fback">
-                                <div class="client-name"><?=$fback['name4']?></div>
-                                <div class="client-comment"><?=$fback['comment4']?></div>
+                                <div class="client-name">@Html.Raw(utm_content.fback["name4"])</div>
+                                <div class="client-comment">@Html.Raw(utm_content.fback["comment4"])</div>
                             </div>
                         </div>
 
                         <div class="col-md-6" id="">
                             <div class="iback">
-                                <img src="images/6.jpg" class="img-responsive img-centered" alt="">
+                                <img class="lazy" data-src="images/6.jpg" class="img-responsive img-centered" alt="">
                             </div>
                             <div class="fback">
-                                <div class="client-name"><?=$fback['name5']?></div>
-                                <div class="client-comment"><?=$fback['comment5']?></div>
+                                <div class="client-name">@Html.Raw(utm_content.fback["name5"])</div>
+                                <div class="client-comment">@Html.Raw(utm_content.fback["comment5"])</div>
                             </div>
                         </div>
 
                         <div class="col-md-6" id="">
                             <div class="iback">
-                                <img src="images/5.jpg" class="img-responsive img-centered" alt="">
+                                <img class="lazy" data-src="images/5.jpg" class="img-responsive img-centered" alt="">
                             </div>
                             <div class="fback">
-                                <div class="client-name"><?=$fback['name6']?></div>
-                                <div class="client-comment"><?=$fback['comment6']?></div>
+                                <div class="client-name">@Html.Raw(utm_content.fback["name6"])</div>
+                                <div class="client-comment">@Html.Raw(utm_content.fback["comment6"])</div>
                             </div>
                         </div>
                     </div>
@@ -531,8 +507,8 @@
                     </div>
 
                     <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                        <li class="carousel-indicator-dot active" onClick="showSlides(0)"></li>
+                        <li class="carousel-indicator-dot" onClick="showSlides(1)"></li>
                     </ol>
 
                 </div>
@@ -540,7 +516,7 @@
 
         </div>
     </div> 
-</section>*@
+</section>
 
 
 

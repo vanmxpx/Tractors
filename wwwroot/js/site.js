@@ -704,14 +704,15 @@ $(document).ready(function () {
     $('.dot').hover(function () {
         if (window.innerWidth > 768) {
             $(this).toggleClass('z-index-10');
+            $('.why-item-box-' + event.target.attributes[1].value + ' img').attr('src', $('.why-item-box-' + event.target.attributes[1].value + ' img').attr('data-src'));
             $('.why-item-box-' + event.target.attributes[1].value).toggleClass('hide');
         }
     })
 
     $('.dot').click(function () {
         if (window.innerWidth <= 768) {
+            $('.why-item-box-' + event.target.attributes[1].value + ' img').attr('src', $('.why-item-box-' + event.target.attributes[1].value + ' img').attr('data-src'));
             $('.why-item-box-' + event.target.attributes[1].value).toggleClass('hide');
-
         }
     })
 
@@ -736,5 +737,29 @@ $('.bt-popup').on('click', function () {
 });
 
 $(function() {
+    $('.lazy').Lazy();
     $("iframe[data-src]").Lazy();
+    
 });
+
+var slideIndex = 0;
+function showSlides(n) {
+    if(slideIndex === n) { 
+        return
+    }
+
+    slideIndex = n;
+
+    var i;
+    var slides = $("#tractors").find("#carousel-example-generic .item");
+    var dots = document.getElementsByClassName("carousel-indicator-dot");
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].className += " active";
+}

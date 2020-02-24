@@ -268,46 +268,46 @@
                                     <?endif;?>
 
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/1-foton.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/1-foton.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/10-chery.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/10-chery.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/11-shifeng-group.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/11-shifeng-group.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/12-belarus.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/12-belarus.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/13-iseki.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/13-iseki.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/14-kioti.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/14-kioti.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/2-dfam.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/2-dfam.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/3-jinma.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/3-jinma.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/4-YTO.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/4-YTO.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/5-dtz.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/5-dtz.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/6-bulat.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/6-bulat.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/7-xingtai.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/7-xingtai.png">
                                     </div>
                                     <div class="logotm-item2 item-l">
-                                        <img src="images/zapchasti_minitraktor/logo/8-deutzFahr.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/8-deutzFahr.png">
                                     </div>
                                     <div class="logotm-item2">
-                                        <img src="images/zapchasti_minitraktor/logo/9-dw.png">
+                                        <img class="lazy" src="images/zapchasti_minitraktor/logo/9-dw.png">
                                     </div>
 
                                 </div>
@@ -325,7 +325,7 @@
                             </a>
                             @{ 
                                 // TODO: rebuild
-                                    string onClickCacl = @"if (typeof(kreditmarket_popup_win)!='undefined') kreditmarket_popup_win.close(); kreditmarket_popup_win=window.open('https://agents.kreditmarket.ua/partners/_general/v01/?uid=ho2q467358049410&product_id=<?=$product_id?>&product_name=<?=$product_name?>&product_price=<?=str_replace(' ' ,'',$price)?>&product_url=<?=$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']?>', 'gener','width=780,height=360,top='+((screen.height-360)/2)+',left='+((screen.width-780)/2)+',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no')";
+                                    string onClickCacl = "";//@"if (typeof(kreditmarket_popup_win)!='undefined') kreditmarket_popup_win.close(); kreditmarket_popup_win=window.open('https://agents.kreditmarket.ua/partners/_general/v01/?uid=ho2q467358049410&product_id=<?=$product_id?>&product_name=<?=$product_name?>&product_price=<?=str_replace(' ' ,'',$price)?>&product_url=<?=$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']', 'gener','width=780,height=360,top='+((screen.height-360)/2)+',left='+((screen.width-780)/2)+',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no')";
                             }
                             <a class="btn btn-md btn-primary bt-line bt-credit" href="javascript:void(0)" type="button" onclick=@onClickCacl>
                                 <span>
@@ -367,6 +367,202 @@
     <main role="main" class="page-content" style='@(@utm_content.disable_main != null && @utm_content.disable_main.Value ? "display: none" : "" )'>
         @RenderBody()
     </main>
+
+    
+    <footer id="contacts" class="page-footer text-sm-left" style=' @utm_content.disable_footer != null && @utm_content.disable_footer) ? "display: none" : "" '>
+
+        <section class="lazy well-xl5 bg-image bg-fixed bg-image-7" data-src=@utm_content.s5_background>
+            <div class="container wow bounceInRight" data-wow-delay="0.2s">
+                <h3 class="contact-title"> @Html.Raw(@utm_content.footer_h1) <hr></h3>
+                <div class="row offset-2">
+                    <div class="col-sm-7 col-md-8">
+
+                        <div class="rd-google-map inset-2">
+                            <div id="google-map" class="rd-google-map__model"></div>
+                            <ul class="rd-google-map__locations">
+                                <li data-x=@utm_content.map[0] data-y=@utm_content.map[1] data-basic="images/gmap_marker.png" data-active="images/gmap_marker_active.png">
+                                    <p>@Html.Raw(@utm_content.loc)</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-5 col-md-4">
+                        <address class="contact-info">
+
+                            <div class="box">
+                                <div class="address-line address-ico">
+                                    <img class="lazy" data-src="../images/phone-ico.png">
+                                </div>
+                                <div class="address-line address-line-text">
+                                    <div class="box__cnt">
+            <span class="free-phone ringo-del"><a href="callto:#"><span class="ringo-phone"><span class="oper">+38&nbsp</span><div class="code-wrap"><span class="ks"><img src="images/ks.png" alt="" width="20">(068)</span><span class="vd"><img src="images/vd.png" alt="" width="20">(050)</span><span class="lc"><img src="images/lc.png" alt="" width="20">(073)</span></div><span class="reshta">@Html.Raw(utm_content.phone[0])</span></span></a></span>
+        </div>
+                                    <a href="#recall-dialog" class="we-call-back popup-with-zoom-anim">@Html.Raw(utm_content.recall_dialog)</a>
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="box address-email">
+                                <div class="address-line address-ico">
+                                    <img class="lazy" data-src="../images/email-ico.png">
+                                </div>
+                                <div class="address-line address-text-email">
+                                    <div>@Html.Raw(utm_content.email)</div>
+                                </div>
+                            </div>
+
+                            <div class="box address-loc">
+                                <div class="address-line address-ico">
+                                <img class="lazy" data-src="../images/mark-ico.png">
+                                </div>
+                                <div class="address-line address-text-loc">
+                                    <div>@Html.Raw(utm_content.loc)</div>
+                                </div>
+                            </div>
+
+                        </address>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="copyright">
+
+            <br>
+            © Copyright 2017
+            </div>
+
+            </section>
+        </footer>
+    </div>
+
+
+
+                        <a href="#recall-dialog-close-page" id="rdcp" class="we-call-back popup-with-zoom-anim" style="display:block; position:absolute; top:-1000px;"></a>
+                        <div id="recall-dialog-close-page" class="ppup popup1 zoom-anim-dialog mfp-hide " >
+                            <form name="sentMessage" id="contactForm" novalidate="">
+                                <h1 style="margin-top: 0px;"> @Html.Raw(utm_content.popup1_header)</h1>
+                                  <ol>
+
+                                    @if( utm_content.popup1_form_short != null && !utm_content.popup1_form_short.Value) {
+                                        <li class="form-group">
+                                          <input id="name" name="name" type="text" placeholder='@utm_content.popup1_form["placeholder1"]' required data-validation-required-message='@utm_content.popup1_form["required_message1"]'>
+                                          <p class="help-block text-danger"></p>
+                                        </li>
+                                    }
+                                    
+                                    <li class="form-group">
+                                      <input id="phone" name="phone" type="text" placeholder='@utm_content.popup1_form["placeholder2"]' required data-validation-required-message='@utm_content.popup1_form["required_message2"]'>
+                                      <p class="help-block text-danger"></p>
+                                    </li>
+
+                                    @if( utm_content.popup1_form_short != null && !utm_content.popup1_form_short.Value) {
+                                        <li>
+                                          <input id="message" name="message" placeholder='@utm_content.popup1_form["placeholder3"]' type="text">
+                                        </li>
+                                    }
+
+                                    <button class="btn btn-md btn-primary bt-popup" style="margin-top: 20px;">@Html.Raw(utm_content.popup1_form["button"])</button>
+                                    <li>
+                                  </ol>
+                                <button title="Close (Esc)" type="button" class="mfp-close" ></button>
+                            </form>
+                        </div>
+
+
+                        <div id="recall-dialog" class="ppup popup1 zoom-anim-dialog mfp-hide ">
+                            <form name="sentMessage" id="contactForm" novalidate="">
+                                <h1> @Html.Raw(utm_content.popup1_h1)</h1>
+                                  <ol>
+                                    @if( utm_content.popup1_form_short != null && !utm_content.popup1_form_short.Value) {
+                                        <li class="form-group">
+                                          <input id="name" name="name" type="text" placeholder='@utm_content.popup1_form["placeholder1"]' required data-validation-required-message='@utm_content.popup1_form["required_message1"]'>
+                                          <p class="help-block text-danger"></p>
+                                        </li>
+                                    }
+
+                                    <li class="form-group">
+                                      <input id="phone" name="phone" type="text" placeholder='@utm_content.popup1_form["placeholder2"]' required data-validation-required-message='@utm_content.popup1_form["required_message2"]'>
+                                      <p class="help-block text-danger"></p>
+                                    </li>
+
+                                    @if( utm_content.popup1_form_short != null && !utm_content.popup1_form_short.Value) {
+                                        <li>
+                                          <input id="message" name="message" placeholder='@utm_content.popup1_form["placeholder3"]' type="text">
+                                        </li>
+                                    }
+
+
+                                    <button class="btn btn-md btn-primary bt-popup">@Html.Raw(utm_content.popup1_form["button"])</button>
+                                    <li>
+                                  </ol>
+                                <button title="Close (Esc)" type="button" class="mfp-close"></button>
+                            </form>
+                        </div>
+
+                        @if(utm_content.popup2_h1 != null) {
+                            <div id="order-dialog" class="ppup popup2 zoom-anim-dialog mfp-hide ">
+                                <form name="sentMessage" id="contactForm" novalidate="">
+                                    <h1>@Html.Raw(utm_content.popup2_h1)</h1>
+                                      <ol>
+                                        <li class="form-group">
+                                          <input id="name" name="name" type="text" placeholder='utm_content.popup2_form["placeholder1"]' required data-validation-required-message='utm_content.popup2_form["required_message1"]'>
+                                          <p class="help-block text-danger"></p>
+                                        </li>
+                                        <li class="form-group">
+                                          <input id="phone" name="phone" type="text" placeholder='utm_content.popup2_form["placeholder2"]' required data-validation-required-message='utm_content.popup2_form["required_message2"]'>
+                                          <p class="help-block text-danger"></p>
+                                        </li>
+                                        <li>
+                                          <input id="message" name="message" placeholder='utm_content.popup2_form["placeholder3"]' type="text">
+                                        </li>
+                                        <button class="btn btn-md btn-primary bt-popup">@Html.Raw(utm_content.popup2_form["button"])</button>
+                                        <li>
+                                      </ol>
+                                    <button title="Close (Esc)" type="button" class="mfp-close"></button>
+                                </form>
+                            </div>
+                        } else {
+                            <div id="order-dialog" class="ppup popup3 zoom-anim-dialog mfp-hide ">
+                                <form name="sentMessage" id="contactForm" novalidate="">
+                                    <h1>@Html.Raw(utm_content.popup3_h1)</h1>
+                                      <ol>
+                                        <li class="form-group">
+                                          <input id="name" name="name" type="text" placeholder='utm_content.popup3_form["placeholder1"]' required data-validation-required-message='utm_content.popup3_form["required_message1"]'>
+                                          <p class="help-block text-danger"></p>
+                                        </li>
+                                        <li class="form-group">
+                                          <input id="phone" name="phone" type="text" placeholder='utm_content.popup3_form["placeholder2"]' required data-validation-required-message='utm_content.popup3_form["required_message2"]'>
+                                          <p class="help-block text-danger"></p>
+                                        </li>
+                                        <li>
+                                          <input id="model" name="model" placeholder='utm_content.popup3_form["placeholder3"]' type="text">
+                                        </li>
+                                        <li>
+                                          <input id="date" name="date" placeholder='utm_content.popup3_form["placeholder4"]' type="text">
+                                        </li>
+                                        <li>
+                                          <input id="power" name="power" placeholder='utm_content.popup3_form["placeholder5"]' type="text">
+                                        </li>
+                                        <li>
+                                          <input id="status" name="status" placeholder='utm_content.popup3_form["placeholder6"]' type="text">
+                                        </li>
+                                        <li>
+                                          <input id="file" name="file" placeholder='utm_content.popup3_form["placeholder7"]' type="file">
+                                        </li>
+                                        <button class="btn btn-md btn-primary bt-popup">@Html.Raw(utm_content.popup3_form["button"])</button>
+                                        <li>
+                                      </ol>
+                                    <button title="Close (Esc)" type="button" class="mfp-close"></button>
+                                </form>
+                            </div>
+                        }
+
+
+    <script>
+        window.message_thanks = @utm_content.message_thanks;
+    </script>
 
 </div>
 

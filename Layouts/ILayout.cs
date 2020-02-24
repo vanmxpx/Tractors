@@ -6,6 +6,31 @@ namespace Tractors.Layouts
     public interface ILayout
     {
         string ToString();
+        string message_thanks { get; }
+        string? loc { get; }
+        string? email { get; }
+
+        List<string> phone { get;  }
+        
+        List<string>? map { get; }
+        
+        string recall_dialog { get;  }
+        string? popup1_h1 { get; }
+        string? popup2_h1 { get; }
+        string? popup3_h1 { get; }
+        bool? popup1_form_short { get; }
+        
+        Dictionary<string, string>? popup1_form { get; }
+        Dictionary<string, string>? popup2_form { get; }
+        Dictionary<string, string>? popup3_form { get; }
+        
+        string? popup1_header { get; }
+        bool? disable_footer { get; }
+        string footer_h1 { get; }
+        Dictionary<string, string>? fback { get; }
+        string s4_title { get; }
+        string s3_h1 { get; }
+        Dictionary<string, string>? s3_form { get; }
         string? s2_this_bu_title { get; }
         
         string? s2_right_style { get; }
@@ -48,7 +73,5 @@ namespace Tractors.Layouts
         string s3_background { get;  }
         string s4_background { get;  }
         string s5_background { get;  }
-        string recall_dialog { get;  }
-        List<string> phone { get;  }
     }
 }

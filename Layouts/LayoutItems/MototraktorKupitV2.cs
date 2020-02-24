@@ -83,6 +83,42 @@ namespace Tractors.Layouts.LayoutItems
 
         public string s2_right_this2_style { get; private set; } = null;
 
+        public string s4_title { get; private set; } = null;
+
+        public Dictionary<string, string> s3_form { get; private set; } = null;
+
+        public Dictionary<string, string> fback { get; private set; } = null;
+
+        public string s3_h1 { get; private set; } = null;
+
+        public string message_thanks { get; private set; } = null;
+
+        public string loc =>  SharedItems.loc;
+
+        public string email => SharedItems.email;
+
+        public string popup1_h1 { get; private set; } = null;
+
+        public string popup2_h1 { get; private set; } = null;
+
+        public string popup3_h1 { get; private set; } = null;
+
+        public bool? popup1_form_short { get; private set; } = null;
+
+        public Dictionary<string, string> popup1_form { get; private set; } = null;
+
+        public Dictionary<string, string> popup2_form { get; private set; } = null;
+
+        public Dictionary<string, string> popup3_form { get; private set; } = null;
+
+        public List<string> map => SharedItems.phone;
+
+        public string popup1_header { get; private set; } = null;
+
+        public bool? disable_footer { get; private set; } = null;
+
+        public string footer_h1 { get; private set; } = null;
+
         public MototraktorKupit() 
         { 
             disable_main = null;
@@ -104,7 +140,7 @@ namespace Tractors.Layouts.LayoutItems
 		    s1_bt1 = "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ";
 		    s2_left_title = "" + name[2] + " <span>ДМТЗ</span>";
 		    s2_right_title = "<span>ДРУГИЕ</span> " + name[2];
-		    //s3_h1 = "РАССЧИТАЙТЕ СТОИМОСТЬ <br>  <span class='tw'>ВАШЕГО "+ name[1] + "</span> <br> <span class='with-line'>УЖЕ СЕЙЧАС!</span>";
+		    s3_h1 = "РАССЧИТАЙТЕ СТОИМОСТЬ <br>  <span class='tw'>ВАШЕГО "+ name[1] + "</span> <br> <span class='with-line'>УЖЕ СЕЙЧАС!</span>";
 
 		    first_form = new Dictionary<string, string> {
 			{"class", "first-form-box first-form-box-redesign" } ,
@@ -164,7 +200,7 @@ namespace Tractors.Layouts.LayoutItems
 		but_text = "ПОКУПАЙТЕ У ПРОИЗВОДИТЕЛЯ! ЭТО:";
 		this1 = new List<string> { "ВЫГОДНО", "НАДЕЖНО", "БЕЗОПАСНО"};
 
-		advantages_block = "<section class='bg-image bg-fixed why-choose-section'>"
+		advantages_block = "<section class='lazy bg-image bg-fixed why-choose-section' data-src='images/mototraktor/s6.jpg'>"
                             +"<div class='container'>"
                                 +"<div class='why-choose-box'>"
                                     +"<div class='row'>"
@@ -195,13 +231,13 @@ namespace Tractors.Layouts.LayoutItems
                                 +"</div>"
                             +"</div>"
                         +"</section>"
-                        +"<section class='back3 text-center' id='vidos'>"
+                        +"<section class='lazy back3 text-center' id='vidos' data-src='images/back3.jpg'>"
                         +"<h2>ВИДЕО ОБЗОР</h2>"
                         +"<iframe width='560' height='315' data-loader='youtube' data-src='xRt6fYL9QNA' frameborder='0'  allowfullscreen></iframe>"
                         +"</section>"
 
 
-                        +"<section class='why-choose-wrapper'>"
+                        +"<section class='lazy why-choose-wrapper' data-src='images/mototraktor/s7.jpg'>"
                             +"<h1>Почему наши тракторы лучше</h1>"
                             +"<div class='container'>"
                                 +"<div class='row'>"
@@ -233,7 +269,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>Передний гидроцилиндр</h6>"
                                     +"<p>Увеличивает функциональные возможности трактора, позволяет использовать переднюю сенокосилку, лопатуотвал, щётку подметальную.</p>"
-                                    +"<img src='images/why-choose-items/why-item-2.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-2.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -247,7 +283,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>Регулируемые колии колёс</h6>"
                                     +"<p>Позволяет регулировать размер колеи трактора при работе в междурядье.</p>"
-                                    +"<img src='images/why-choose-items/why-item-7.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-7.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -261,7 +297,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>5-ти ручейных шкив двигателя</h6>"
                                     +"<p>Увеличивает функциональные возможности трактора позволяя агрегатировать трактор различными механическими механизмами. </p>"
-                                    +"<img src='images/why-choose-items/why-item-5.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-5.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -275,7 +311,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6> Воздушный фильтр за пределами панели приборов</h6>"
                                     +"<p>Удобность в обслуживании фильтра и экономия времени на проведении ТО.</p>"
-                                    +"<img src='images/why-choose-items/why-item-10.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-10.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -289,7 +325,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>Трос декомпрессора и ручной газ</h6>"
                                     +"<p>С лёгкостью и без усилий вы запустите двигатель даже в самых суровых зимних условиях.</p>"
-                                    +"<img src='images/why-choose-items/why-item-8.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-8.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -303,7 +339,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>Прямое натяжение ремней привода двигателя и КПП</h6>"
                                     +"<p>Передаёт обороты двигателя на муфту сцепления КПП без потери мощности, в разы увеличивает срок службы приводных ремней.</p>"
-                                    +"<img src='images/why-choose-items/why-item-4.jpg' alt=''>"
+                                    +"<img data-class='lazy' src='images/why-choose-items/why-item-4.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -317,7 +353,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>Отдельный рычаг повышенных и пониженных передач</h6>"
                                     +"<p>Удобность в управлении минитрактором.  Исключается возможность включения двух передач одновременно. </p>"
-                                    +"<img src='images/why-choose-items/why-item-9.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-9.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -331,7 +367,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>Блокировка дифференциала</h6>"
                                     +"<p>Увеличивает проходимость трактора, позволяет эксплуатировать трактор в тяжёлых дорожных условиях, как при размытых грунтах, так и при гололёде. </p>"
-                                    +"<img src='images/why-choose-items/why-item-1.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-1.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -345,7 +381,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>Задний гидравлический навесной механизм с плавающим режимом</h6>"
                                     +"<p>Позволяет равномерно и качественно обрабатывать почву и растительные культуры на склонах и холмах. </p>"
-                                    +"<img src='images/why-choose-items/why-item-3.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-3.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -359,7 +395,7 @@ namespace Tractors.Layouts.LayoutItems
                                 +"<div class='item-container'>"
                                     +"<h6>Регулируемые колии колёс</h6>"
                                     +"<p>Позволяет регулировать размер колеи трактора при работе в междурядье.</p>"
-                                    +"<img src='images/why-choose-items/why-item-6.jpg' alt=''>"
+                                    +"<img data-src='images/why-choose-items/why-item-6.jpg' alt=''>"
                                     +"<div class='item-box-btn-close'>"
                                         +"<div class='stick stick-1'></div>"
                                         +"<div class='stick stick-2'></div>"
@@ -370,7 +406,7 @@ namespace Tractors.Layouts.LayoutItems
                         +"</section>";
 
 		s2_left_this2_style = "";
-		//s2_right_styles2_right_style = "padding-bottom: 88px;";
+		s2_right_style = "padding-bottom: 88px;";
 		s2_right_this2_style = "margin-top: 20px;";
 		s2_this_left = new List<string> { 
 			"Являемся заводом-изготовителем",
@@ -414,83 +450,83 @@ namespace Tractors.Layouts.LayoutItems
 		};
 
 
-// 		s3_form = array(
-// 			"placeholder1" => "Меня зовут",
-// 			"required_message1" => "Введите свое имя",
-// 			"placeholder2" => "Мой телефон",
-// 			"required_message2" => "Введите свой телефон",
-// 			"placeholder3" => "Мне нужен "+ name[0] + "... ",
-// 			"button" => "РАССЧИТАТЬ"
-// 		);
+		s3_form = new Dictionary<string, string>() {
+			{"placeholder1", "Меня зовут"},
+			{"required_message1", "Введите свое имя"},
+			{"placeholder2", "Мой телефон"},
+			{"required_message2", "Введите свой телефон"},
+			{"placeholder3", "Мне нужен "+ name[0] + "... "},
+			{"button", "РАССЧИТАТЬ"}
+        };
 
 
-// 		s4_title = "ЧТО ГОВОРЯТ</span> <br> НАШИ КЛИЕНТЫ ";
-// fback = array(
+ 		s4_title = "ЧТО ГОВОРЯТ</span> <br> НАШИ КЛИЕНТЫ ";
+fback = new Dictionary<string, string>() {
 
 
-// 			"name1" => "<span>Михаил</span>, фермер",
-// 			"comment1" => "Рассматривая для себя варианты минитехники, остановился на минитракторах ДМТЗ, знакомый фермер посоветовал.  Оплатил после получения, да и сэкономил на доставке хорошо. Уже 2 года работает, пока никаких проблем нет. ",
-
-
-
-
-// 			"name2" => "<span>Олег</span>, предприниматель",
-// 			"comment2" => "Искали недорогой и надежный вариант по минитракторам для своего производства, нашли в интернете Торговый Дом Тракторный Завод. За нами закрепили собственного менеджера, который оказался отличным специалистом в сельхозтехнике, подобрал именно то, что нам было нужно. Спасибо за сотрудничество!",
+			{"name1" , "<span>Михаил</span>, фермер"},
+			{"comment1" , "Рассматривая для себя варианты минитехники, остановился на минитракторах ДМТЗ, знакомый фермер посоветовал.  Оплатил после получения, да и сэкономил на доставке хорошо. Уже 2 года работает, пока никаких проблем нет. "},
 
 
 
 
-// 			"name6" => "<span>Николай</span>, владелец фермерского хозяйства",
-// 			"comment6" => "Приятно работать с компетентными людьми. Не просто по телефону проконсультировали, но и на завод пригласили. Посмотрел все модели, каждую при мне завели. Действительно помогли выбрать, а не “втюхали”. Пользуюсь уже полгода как, пока никаких проблем нет.",
+			{"name2" , "<span>Олег</span>, предприниматель"},
+			{"comment2" , "Искали недорогой и надежный вариант по минитракторам для своего производства, нашли в интернете Торговый Дом Тракторный Завод. За нами закрепили собственного менеджера, который оказался отличным специалистом в сельхозтехнике, подобрал именно то, что нам было нужно. Спасибо за сотрудничество!"},
 
 
 
 
-// 			"name4" => "<span>Наталья</span>, фермер",
-// 			"comment4" => "Заказали себе уже второй минитрактор ДМТЗ. Хорошо, что у нас в Украине есть такая качественная сельхозтехника отечественного производства!",
+			{"name6" , "<span>Николай</span>, владелец фермерского хозяйства"},
+			{"comment6" , "Приятно работать с компетентными людьми. Не просто по телефону проконсультировали, но и на завод пригласили. Посмотрел все модели, каждую при мне завели. Действительно помогли выбрать, а не “втюхали”. Пользуюсь уже полгода как, пока никаких проблем нет."},
 
 
 
 
-// 			"name5" => "<span>Игорь</span>, водитель сельхозтехники",
-// 			"comment5" => "Мне, как профессионалу, в первую очередь было важно, чтобы с техникой было комфортно работать. Когда заглянул под капот ДМТЗ - сразу стало понятно, что все сделано качественно и надежно. Чувствуется отличие от китайской сборки. Думаю, обновлять парк в дальнейшем будем только в ООО «Торговый Дом «Тракторный Завод».",
+			{"name4" , "<span>Наталья</span>, фермер"},
+			{"comment4" , "Заказали себе уже второй минитрактор ДМТЗ. Хорошо, что у нас в Украине есть такая качественная сельхозтехника отечественного производства!"},
 
 
 
 
-// 			"name3" => "<span>Александр</span>, помощник руководителя предприятия",
-// 			"comment3" => "Пользуемся минитрактором ДМТЗ уже не первый год. Качество хорошее, но техника есть техника, в какой-то момент понадобилась помощь специалиста. Теперь я знаю, как важно чтобы у производителя был собственный сервис по всей стране. Знакомый купил минитрактор другой фирмы, уже третий месяц стоит - нигде починить не может. Спасибо ООО «Торговый Дом «Тракторный Завод» за оперативность. Отдельная благодарность Юрию, за то что рассказал, как ухаживать за техникой в дальнейшем.",
+			{"name5" , "<span>Игорь</span>, водитель сельхозтехники"},
+			{"comment5" , "Мне, как профессионалу, в первую очередь было важно, чтобы с техникой было комфортно работать. Когда заглянул под капот ДМТЗ - сразу стало понятно, что все сделано качественно и надежно. Чувствуется отличие от китайской сборки. Думаю, обновлять парк в дальнейшем будем только в ООО «Торговый Дом «Тракторный Завод»."},
 
 
-// 		);
 
 
-// 		footer_h1 = "<span>КАК</span> НАС НАЙТИ?";
+			{"name3" , "<span>Александр</span>, помощник руководителя предприятия"},
+			{"comment3" , "Пользуемся минитрактором ДМТЗ уже не первый год. Качество хорошее, но техника есть техника, в какой-то момент понадобилась помощь специалиста. Теперь я знаю, как важно чтобы у производителя был собственный сервис по всей стране. Знакомый купил минитрактор другой фирмы, уже третий месяц стоит - нигде починить не может. Спасибо ООО «Торговый Дом «Тракторный Завод» за оперативность. Отдельная благодарность Юрию, за то что рассказал, как ухаживать за техникой в дальнейшем."},
 
 
-//         popup1_form_short = true;
-// 		popup1_h1 = "КАК С ВАМИ СВЯЗАТЬСЯ ?";
-//         popup1_header = "Не нашли что искали? <br> Оставьте номер, мы перезвоним и поможем!";
-// 		popup1_form = array(
-// 			"placeholder1" => "Меня зовут",
-// 			"required_message1" => "Введите свое имя",
-// 			"placeholder2" => "Мой телефон",
-// 			"required_message2" => "Введите свой телефон",
-// 			"placeholder3" => "Мне нужен "+ name[0] + "... ",
-// 			"button" => "ОСТАВИТЬ ЗАЯВКУ"
-// 		);
+};
 
-// 		popup2_h1 = "ЗАКАЗАТЬ ". name[0]. " <br> ПРЯМО С ЗАВОДА";
-// 		popup2_form = array(
-// 			"placeholder1" => "Меня зовут",
-// 			"required_message1" => "Введите свое имя",
-// 			"placeholder2" => "Мой телефон",
-// 			"required_message2" => "Введите свой телефон",
-// 			"placeholder3" => "Мне нужен "+ name[0] + "... ",
-// 			"button" => "ОСТАВИТЬ ЗАЯВКУ"
-// 		);
 
-// 		message_thanks = "Мы свяжемся с Вами. Спасибо.";
+ 		footer_h1 = "<span>КАК</span> НАС НАЙТИ?";
+
+
+        popup1_form_short = true;
+		popup1_h1 = "КАК С ВАМИ СВЯЗАТЬСЯ ?";
+        popup1_header = "Не нашли что искали? <br> Оставьте номер, мы перезвоним и поможем!";
+		popup1_form = new Dictionary<string, string>() {
+			{"placeholder1" , "Меня зовут"},
+			{"required_message1" , "Введите свое имя"},
+			{"placeholder2" , "Мой телефон"},
+			{"required_message2" , "Введите свой телефон"},
+			{"placeholder3" , "Мне нужен "+ name[0] + "... "},
+			{"button" , "ОСТАВИТЬ ЗАЯВКУ"}
+        };
+
+		popup2_h1 = "ЗАКАЗАТЬ " + name[0] + " <br> ПРЯМО С ЗАВОДА";
+		popup2_form = new Dictionary<string, string>() {
+			{"placeholder1" , "Меня зовут"},
+			{"required_message1" , "Введите свое имя"},
+			{"placeholder2" , "Мой телефон"},
+			{"required_message2" , "Введите свой телефон"},
+			{"placeholder3" , "Мне нужен "+ name[0] + "... "},
+			{"button" , "ОСТАВИТЬ ЗАЯВКУ"}
+        };
+
+ 		message_thanks = "Мы свяжемся с Вами. Спасибо.";
         }
     }
 }
