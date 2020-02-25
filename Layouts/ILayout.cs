@@ -7,6 +7,8 @@ namespace Tractors.Layouts
     {
         string ToString();
         string message_thanks { get; }
+        string keywords { get; }
+        string description { get; }
         string? loc { get; }
         string? email { get; }
 

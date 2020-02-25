@@ -1,15 +1,65 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+@{ 
+    Layouts.ILayout utm_content = ViewData["utm_content"] as Layouts.ILayout;
+    string pattern = @"<(.|\n)*?>";
+    string title = System.Text.RegularExpressions.Regex.Replace(utm_content.s1_h1, pattern, string.Empty).ToUpper();
+}
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Tractors</title>
+
+    <title>@title</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="@utm_content.keywords" />
+    <meta name="description" content="@utm_content.description" />
+    <meta http-equiv="author" content="MEXICANO.COM.UA" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="~/css/site.min.css" />
+    
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '199092117418858');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=199092117418858&ev=PageView&noscript=1"
+    /></noscript>
 </head>
 <body>
-    @{ 
-        Layouts.ILayout utm_content = ViewData["utm_content"] as Layouts.ILayout;
-    }
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87176753-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(53885887, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53885887" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 
     <div class="page text-center">
 
@@ -27,7 +77,7 @@
                         <div class="rd-navbar-brand">
 
                                 <span class="icon icon-md icon-primary icon-primary-variant-1">
-                                    <img src=@utm_content.logo  alt="">
+                                    <img src='@utm_content.logo'  alt="">
                                 </span>
 
                         </div>
@@ -85,13 +135,6 @@
                                     </a>
                                 </li>
                             }
-                            @* @if ((utm_content.ToString() == "mototraktor_kupit_vd" ||
-                                    utm_content.ToString() == "mototraktor_kupit_vd-ua" ||
-                                    utm_content.ToString() == "mototraktor_kupit_video" ||
-                                    utm_content.ToString() == "mototraktor_kupit_v2") && utm_content.video != null ){
-
-                            } *@
-
                             <li>
                                 <a href="#tractors">
                                     <span>@Html.Raw(utm_content.menu[4])</span>
@@ -121,7 +164,7 @@
             </section>
         }
 
-        <section class="well-xl1 bg-image bg-fixed position__relative" style="background-image: url(@utm_content.s1_background);">
+        <section class="lazy well-xl1 bg-image bg-fixed position__relative" data-src="@utm_content.s1_background">
 
             <div class="container">
 
@@ -155,7 +198,8 @@
                 @if (utm_content.first_form != null ){
                     @Html.Raw("<div class='row'><div class='col-xs-12 col-sm-12 col-md-7 col-lg-7 text-left form-first-col'>");
                 }
-                    <h1 style="<?= isset($s1_h1_style) ? $s1_h1_style : '';?>">
+                    
+                    <h1 style='@utm_content.s1_h1_style != null ? @utm_content.s1_h1_style : ""'>
                         @Html.Raw(utm_content.s1_h1)
                     </h1>
                 @if (utm_content.this1_credit != null ){
@@ -219,11 +263,11 @@
                             <div class="container">
                                 <div class="row logotm-box1">
 
-                                    <?if(isset($ukr)):?>
+                                    @if(utm_content.ukr != null && utm_content.ukr.Value) { 
                                         <h1><span class="mini-t">Оригінальні запчастини для мотоблоків</span></h1>
-                                    <?else:?>
+                                    } else {
                                         <h1><span class="mini-t"> ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ ДЛЯ МОТОБЛОКОВ</span></h1>
-                                    <?endif;?>
+                                    }
 
                                     <div class="logotm-item1">
                                         <img src="images/zapchasti_motoblok/logo/15-kentavr.png">
@@ -261,11 +305,11 @@
                             <div class="container">
                                 <div class="row logotm-box2">
 
-                                    <?if(isset($ukr)):?>
+                                    @if(utm_content.ukr != null && utm_content.ukr.Value) {
                                         <h1><span class="mini-t">Оригінальні запчастини для</span></h1>
-                                    <?else:?>
+                                    } else {
                                         <h1><span class="mini-t">ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ К МИНИТРАКТОРАМ</span></h1>
-                                    <?endif;?>
+                                    }
 
                                     <div class="logotm-item2">
                                         <img class="lazy" src="images/zapchasti_minitraktor/logo/1-foton.png">
@@ -327,7 +371,7 @@
                                 // TODO: rebuild
                                     string onClickCacl = "";//@"if (typeof(kreditmarket_popup_win)!='undefined') kreditmarket_popup_win.close(); kreditmarket_popup_win=window.open('https://agents.kreditmarket.ua/partners/_general/v01/?uid=ho2q467358049410&product_id=<?=$product_id?>&product_name=<?=$product_name?>&product_price=<?=str_replace(' ' ,'',$price)?>&product_url=<?=$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']', 'gener','width=780,height=360,top='+((screen.height-360)/2)+',left='+((screen.width-780)/2)+',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no')";
                             }
-                            <a class="btn btn-md btn-primary bt-line bt-credit" href="javascript:void(0)" type="button" onclick=@onClickCacl>
+                            <a class="btn btn-md btn-primary bt-line bt-credit" href="javascript:void(0)" type="button" onclick='@onClickCacl'>
                                 <span>
                                     РАССЧИТАТЬ <br>
                                     <span>самостоятельно</span>
@@ -371,16 +415,17 @@
     
     <footer id="contacts" class="page-footer text-sm-left" style=' @utm_content.disable_footer != null && @utm_content.disable_footer) ? "display: none" : "" '>
 
-        <section class="lazy well-xl5 bg-image bg-fixed bg-image-7" data-src=@utm_content.s5_background>
+        <section class="lazy well-xl5 bg-image bg-fixed bg-image-7" data-src='@utm_content.s5_background'>
             <div class="container wow bounceInRight" data-wow-delay="0.2s">
                 <h3 class="contact-title"> @Html.Raw(@utm_content.footer_h1) <hr></h3>
                 <div class="row offset-2">
                     <div class="col-sm-7 col-md-8">
 
                         <div class="rd-google-map inset-2">
-                            <div id="google-map" class="rd-google-map__model"></div>
+                            <div id="google-map" class="rd-google-map__model" data-loader="google-map"></div>
+                            <div class="google-map" data-lat="35.7090711" data-lng="139.7321219"></div>
                             <ul class="rd-google-map__locations">
-                                <li data-x=@utm_content.map[0] data-y=@utm_content.map[1] data-basic="images/gmap_marker.png" data-active="images/gmap_marker_active.png">
+                                <li data-x='@utm_content.map[0]' data-y='@utm_content.map[1]' data-basic="images/gmap_marker.png" data-active="images/gmap_marker_active.png">
                                     <p>@Html.Raw(@utm_content.loc)</p>
                                 </li>
                             </ul>
@@ -561,7 +606,7 @@
 
 
     <script>
-        window.message_thanks = @utm_content.message_thanks;
+        window.message_thanks = '@utm_content.message_thanks';
     </script>
 
 </div>
@@ -570,6 +615,9 @@
     <script src="~/lib/jquery/dist/jquery.maskedinput.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.lazy.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.lazy.youtube.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxJQm8PEqQMJ5GOMaMNjwUKAda7a1kfgQ">
+    </script>
     <script src="~/js/site.min.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)

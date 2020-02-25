@@ -119,6 +119,10 @@ namespace Tractors.Layouts.LayoutItems
 
         public string footer_h1 { get; private set; } = null;
 
+        public string keywords { get; private set; } = null;
+
+        public string description { get; private set; } = null;
+
         public MototraktorKupit() 
         { 
             disable_main = null;
@@ -134,8 +138,8 @@ namespace Tractors.Layouts.LayoutItems
 		    //mexicano = "Студия HC Landing Page Mexicano";
 
 		    //title = "Купить "+ name[0] + "";
-		    //keywords = "Купить "+ name[0] + "";
-		   // description = "Купить "+ name[0] + "";
+		    keywords = "Купить "+ name[0] + "";
+		    description = "Купить "+ name[0] + "";
 		    s1_h1 = "ИЩЕТЕ ГДЕ КУПИТЬ <br> "+ name[0] + "? <br> <span class='mini-t'>"+ name[2] + " ОТ <span class='mini-p'>" + price +"</span> ГРН</span><div>3 года гарантии</div>";
 		    s1_bt1 = "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ";
 		    s2_left_title = "" + name[2] + " <span>ДМТЗ</span>";

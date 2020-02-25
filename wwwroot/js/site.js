@@ -232,37 +232,6 @@ function isIE() {
 })(jQuery);
 
 /**
- * @module       RD Google Map
- * @description  Enables RD Google Map Plugin
- */
-;
-(function ($) {
-    var o = document.getElementById("google-map");
-    if (o) {
-        include('https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyCxJQm8PEqQMJ5GOMaMNjwUKAda7a1kfgQ');
-        $(document).ready(function () {
-
-            var o = $('#google-map');
-            if (o.length > 0) {
-
-                map = new google.maps.Map(document.getElementById("google-map"), {
-                    center: { lat: 48.409050, lng: 34.998631 },
-                    zoom: 17
-                });
-
-                var marker = new google.maps.Marker({
-                    position: { lat: 48.409050, lng: 34.998631 },
-                    map: map,
-                });
-
-            }
-
-        });
-    }
-})
-    (jQuery);
-
-/**
  * @module       RD Navbar
  * @description  Enables RD Navbar Plugin
  */
@@ -736,8 +705,25 @@ $('.bt-popup').on('click', function () {
     ga('send', 'event', 'click', 'button'); fbq('track', 'Lead');
 });
 
+(function($) {
+    $.Lazy('google-map', function(element, response) {
+        map = new google.maps.Map(document.getElementById('google-map'), {
+            center: { lat: 48.409050, lng: 34.998631 },
+            zoom: 17
+        });
+
+        var marker = new google.maps.Marker({
+            position: { lat: 48.409050, lng: 34.998631 },
+            map: map,
+        });
+
+        response(true);
+    });
+})(jQuery);
+
 $(function() {
     $('.lazy').Lazy();
+    $('#google-map').Lazy();
     $("iframe[data-src]").Lazy();
     
 });
