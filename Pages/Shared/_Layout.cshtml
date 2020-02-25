@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="wide wow-animation">
 @{ 
     Layouts.ILayout utm_content = ViewData["utm_content"] as Layouts.ILayout;
     string pattern = @"<(.|\n)*?>";
@@ -45,7 +45,7 @@
 
 </script>
 
-<!-- Yandex.Metrika counter -->
+@* <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -57,7 +57,7 @@
         accurateTrackBounce:true,
         webvisor:true
    });
-</script>
+</script> *@
 <noscript><div><img src="https://mc.yandex.ru/watch/53885887" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 
@@ -619,7 +619,64 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxJQm8PEqQMJ5GOMaMNjwUKAda7a1kfgQ">
     </script>
     <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+    
+    /* <![CDATA[ */
+    var google_conversion_id = 838522387;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/848546952/?guid=ON&amp;script=0"/>
+        </div>
+    </noscript>
 
+	<script type="text/javascript">(function (w, d) {w.amo_pixel_token = 'p1Ip4iB8yqaEyXU9HPmcTEO/odcS+WqguIXAeYjyz9uX6jTFrGwHYHkB+HUG0D8F';var s = document.createElement('script'), f = d.getElementsByTagName('script')[0];s.id = 'amo_pixel_js';s.type = 'text/javascript';s.async = true;s.src = 'https://piper.amocrm.ru/pixel/js/tracker/pixel.js?token=' + w.amo_pixel_token;f.parentNode.insertBefore(s, f);})(window, document);</script>
+
+    @* <!-- CallTracker CODE --> *@
+    <script>var telerTrackerWidgetId="43beb69e-472b-4b86-9638-4ae8d0963099"; var telerTrackerDomain="tractorzavod.phonet.com.ua";</script> 
+    <script src="//tractorzavod.phonet.com.ua/public/widget/call-tracker/lib.js"></script>
+    @* <!-- END CallTracker CODE--> *@
+    <script>
+                    /**
+            * module       WOW Animation
+            * description  Enables scroll animation on the page
+            */
+            ;
+            (function ($) {
+                var o = $('html');
+                console.log(o);
+                if (o.hasClass('desktop') && o.hasClass("wow-animation") && $(".wow").length) {
+                    $(document).ready(function () {
+                        new WOW().init();
+                    });
+                }
+            })(jQuery);
+
+
+            /**
+            * module       ToTop
+            * description  Enables ToTop Plugin
+            */
+            ;
+            (function ($) {
+                var o = $('html');
+                console.log(o);
+                if (o.hasClass('desktop')) {
+
+                    $(document).ready(function () {
+                        $().UItoTop({
+                            easingType: 'easeOutQuart',
+                            containerClass: 'ui-to-top fa fa-caret-up'
+                        });
+                    });
+                }
+            })(jQuery);
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
