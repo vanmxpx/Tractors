@@ -35,6 +35,7 @@ namespace Tractors
                 services.AddRazorPages();
             }
 
+            services.AddControllers();
             services.AddSingleton<LayoutsService>(new LayoutsService());
         }
 
@@ -62,6 +63,7 @@ namespace Tractors
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }

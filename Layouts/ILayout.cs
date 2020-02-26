@@ -11,6 +11,7 @@ namespace Tractors.Layouts
         string description { get; }
         string? loc { get; }
         string? email { get; }
+        string title { get; }
 
         List<string> phone { get;  }
         

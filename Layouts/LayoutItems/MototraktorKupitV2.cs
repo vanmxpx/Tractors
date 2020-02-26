@@ -3,7 +3,7 @@ using System.Collections.Immutable;
 
 namespace Tractors.Layouts.LayoutItems
 {
-    public class MototraktorKupit : ILayout
+    public class MototraktorKupitV2 : ILayout
     {
 
         public override string ToString() 
@@ -61,8 +61,6 @@ namespace Tractors.Layouts.LayoutItems
 
         public string recall_dialog { get; private set; } = null;
 
-        public List<string> phone => SharedItems.phone;
-
         public string video { get; private set; } = null;
 
         public string s2_this_bu_title { get; private set; } = null;
@@ -94,8 +92,12 @@ namespace Tractors.Layouts.LayoutItems
         public string message_thanks { get; private set; } = null;
 
         public string loc =>  SharedItems.loc;
-
         public string email => SharedItems.email;
+        public List<string> map => SharedItems.map;
+        public List<string> phone => SharedItems.phone;
+
+        
+        public string title { get; private set; } = null;
 
         public string popup1_h1 { get; private set; } = null;
 
@@ -111,7 +113,7 @@ namespace Tractors.Layouts.LayoutItems
 
         public Dictionary<string, string> popup3_form { get; private set; } = null;
 
-        public List<string> map => SharedItems.phone;
+
 
         public string popup1_header { get; private set; } = null;
 
@@ -123,7 +125,7 @@ namespace Tractors.Layouts.LayoutItems
 
         public string description { get; private set; } = null;
 
-        public MototraktorKupit() 
+        public MototraktorKupitV2() 
         { 
             disable_main = null;
             product_name = null;
@@ -137,7 +139,7 @@ namespace Tractors.Layouts.LayoutItems
 		    logo = "images/logo.png";
 		    //mexicano = "Студия HC Landing Page Mexicano";
 
-		    //title = "Купить "+ name[0] + "";
+		    title = "ИЩЕТЕ ГДЕ КУПИТЬ "+ name[0] + "? "+ name[2] + " ОТ " + price +" ГРН 3 года гарантии</div>";
 		    keywords = "Купить "+ name[0] + "";
 		    description = "Купить "+ name[0] + "";
 		    s1_h1 = "ИЩЕТЕ ГДЕ КУПИТЬ <br> "+ name[0] + "? <br> <span class='mini-t'>"+ name[2] + " ОТ <span class='mini-p'>" + price +"</span> ГРН</span><div>3 года гарантии</div>";

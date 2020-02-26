@@ -2,8 +2,7 @@
 <html lang="en" class="wide wow-animation">
 @{ 
     Layouts.ILayout utm_content = ViewData["utm_content"] as Layouts.ILayout;
-    string pattern = @"<(.|\n)*?>";
-    string title = System.Text.RegularExpressions.Regex.Replace(utm_content.s1_h1, pattern, string.Empty).ToUpper();
+    string title = utm_content.title.ToUpper();
 }
 <head>
 
@@ -16,34 +15,9 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="~/css/site.min.css" />
-    
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '199092117418858');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=199092117418858&ev=PageView&noscript=1"
-    /></noscript>
+
 </head>
 <body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-87176753-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 @* <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
@@ -58,7 +32,7 @@
         webvisor:true
    });
 </script> *@
-<noscript><div><img src="https://mc.yandex.ru/watch/53885887" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+@* <noscript><div><img src="https://mc.yandex.ru/watch/53885887" style="position:absolute; left:-9999px;" alt="" /></div></noscript> *@
 
 
     <div class="page text-center">
@@ -68,24 +42,16 @@
         <div class="rd-navbar-wrap" style=' @( @utm_content.disable_menu != null && @utm_content.disable_menu.Value ? "display: none" : "" )'>
             <nav class="rd-navbar" data-rd-navbar-lg="rd-navbar-fixed">
                 <div class="rd-navbar-inner">
-
                     <div class="rd-navbar-panel">
-
                         <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar"><span></span></button>
-
-
                         <div class="rd-navbar-brand">
-
                                 <span class="icon icon-md icon-primary icon-primary-variant-1">
                                     <img src='@utm_content.logo'  alt="">
                                 </span>
-
                         </div>
-
                     </div>
 
                     <div class="rd-navbar-nav-wrap">
-
                         <ul class="rd-navbar-nav">
                             <li>
                                 <a href="#intro">
@@ -140,11 +106,15 @@
                                     <span>@Html.Raw(utm_content.menu[4])</span>
                                 </a>
                             </li>
+
                             <li>
-                                <a href="#contacts">
-                                    <span>@Html.Raw(utm_content.menu[5])</span>
+                                <a href="#contacts">                            
+                                    @if (utm_content.menu.Count > 5 ){
+                                        <span>@Html.Raw(utm_content.menu[5])</span>
+                                    }
                                 </a>
                             </li>
+                            
                         </ul>
 
                     </div>
@@ -221,7 +191,7 @@
                     </div>
                     
                 }
-                else if ( utm_content.this1[0] == "запч" || utm_content.this1[0] == "запч_кред") { 
+                else if ( utm_content.this1.Count > 0 && (utm_content.this1[0] == "запч" || utm_content.this1[0] == "запч_кред")) { 
                         <div class="container">
                             <div class="row kredit-box">
                                 <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center " >
@@ -258,7 +228,7 @@
                             </div>
                         </div>
                 }
-                else if ( utm_content.this1[0] == "запч2" || utm_content.this1[0] == "запч_кред2") { 
+                else if ( utm_content.this1.Count > 0 && (utm_content.this1[0] == "запч2" || utm_content.this1[0] == "запч_кред2")) { 
                         <div class="row kredit-box">
                             <div class="container">
                                 <div class="row logotm-box1">
@@ -300,7 +270,7 @@
                             </div>
                         </div>
                 }
-                else if ( utm_content.this1[0] == "запч3" || utm_content.this1[0] == "запч_кред3") { 
+                else if (utm_content.this1.Count > 0 && (utm_content.this1[0] == "запч3" || utm_content.this1[0] == "запч_кред3")) { 
                         <div class="row kredit-box">
                             <div class="container">
                                 <div class="row logotm-box2">
@@ -358,7 +328,7 @@
                             </div>
                         </div>
                     }
-                    @if ( utm_content.this1[0] == "кред" || utm_content.this1[0] == "запч_кред" || utm_content.this1[0] == "запч_кред2" || utm_content.this1[0] == "запч_кред3") { 
+                    @if (utm_content.this1.Count > 0 &&( utm_content.this1[0] == "кред" || utm_content.this1[0] == "запч_кред" || utm_content.this1[0] == "запч_кред2" || utm_content.this1[0] == "запч_кред3")) { 
                     
                         @if( utm_content.but_text_kred != null ) { 
                             <div class="but-text">@utm_content.but_text_kred</div>
@@ -382,8 +352,8 @@
 
                     }
                     else {
-                        <a href="#order-dialog" class="btn btn-md btn-primary bt1 popup-with-zoom-anim" style=' @( utm_content.this1[0] == "кред" ? "font-weight: 300;padding: 12px 28px 10px;" : "" )' >
-                            @utm_content.s1_bt1
+                        <a href="#order-dialog" class="btn btn-md btn-primary bt1 popup-with-zoom-anim" style=' @( utm_content.this1.Count > 0 && utm_content.this1[0] == "кред" ? "font-weight: 300;padding: 12px 28px 10px;" : "" )' >
+                            @Html.Raw(utm_content.s1_bt1)
                         </a>
                     }
 
@@ -552,15 +522,15 @@
                                     <h1>@Html.Raw(utm_content.popup2_h1)</h1>
                                       <ol>
                                         <li class="form-group">
-                                          <input id="name" name="name" type="text" placeholder='utm_content.popup2_form["placeholder1"]' required data-validation-required-message='utm_content.popup2_form["required_message1"]'>
+                                          <input id="name" name="name" type="text" placeholder='@utm_content.popup2_form["placeholder1"]' required data-validation-required-message='@utm_content.popup2_form["required_message1"]'>
                                           <p class="help-block text-danger"></p>
                                         </li>
                                         <li class="form-group">
-                                          <input id="phone" name="phone" type="text" placeholder='utm_content.popup2_form["placeholder2"]' required data-validation-required-message='utm_content.popup2_form["required_message2"]'>
+                                          <input id="phone" name="phone" type="text" placeholder='@utm_content.popup2_form["placeholder2"]' required data-validation-required-message='@utm_content.popup2_form["required_message2"]'>
                                           <p class="help-block text-danger"></p>
                                         </li>
                                         <li>
-                                          <input id="message" name="message" placeholder='utm_content.popup2_form["placeholder3"]' type="text">
+                                          <input id="message" name="message" placeholder='@utm_content.popup2_form["placeholder3"]' type="text">
                                         </li>
                                         <button class="btn btn-md btn-primary bt-popup">@Html.Raw(utm_content.popup2_form["button"])</button>
                                         <li>
@@ -574,27 +544,27 @@
                                     <h1>@Html.Raw(utm_content.popup3_h1)</h1>
                                       <ol>
                                         <li class="form-group">
-                                          <input id="name" name="name" type="text" placeholder='utm_content.popup3_form["placeholder1"]' required data-validation-required-message='utm_content.popup3_form["required_message1"]'>
+                                          <input id="name" name="name" type="text" placeholder='@utm_content.popup3_form["placeholder1"]' required data-validation-required-message='@utm_content.popup3_form["required_message1"]'>
                                           <p class="help-block text-danger"></p>
                                         </li>
                                         <li class="form-group">
-                                          <input id="phone" name="phone" type="text" placeholder='utm_content.popup3_form["placeholder2"]' required data-validation-required-message='utm_content.popup3_form["required_message2"]'>
+                                          <input id="phone" name="phone" type="text" placeholder='@utm_content.popup3_form["placeholder2"]' required data-validation-required-message='@utm_content.popup3_form["required_message2"]'>
                                           <p class="help-block text-danger"></p>
                                         </li>
                                         <li>
-                                          <input id="model" name="model" placeholder='utm_content.popup3_form["placeholder3"]' type="text">
+                                          <input id="model" name="model" placeholder='@utm_content.popup3_form["placeholder3"]' type="text">
                                         </li>
                                         <li>
-                                          <input id="date" name="date" placeholder='utm_content.popup3_form["placeholder4"]' type="text">
+                                          <input id="date" name="date" placeholder='@utm_content.popup3_form["placeholder4"]' type="text">
                                         </li>
                                         <li>
-                                          <input id="power" name="power" placeholder='utm_content.popup3_form["placeholder5"]' type="text">
+                                          <input id="power" name="power" placeholder='@utm_content.popup3_form["placeholder5"]' type="text">
                                         </li>
                                         <li>
-                                          <input id="status" name="status" placeholder='utm_content.popup3_form["placeholder6"]' type="text">
+                                          <input id="status" name="status" placeholder='@utm_content.popup3_form["placeholder6"]' type="text">
                                         </li>
                                         <li>
-                                          <input id="file" name="file" placeholder='utm_content.popup3_form["placeholder7"]' type="file">
+                                          <input id="file" name="file" placeholder='@utm_content.popup3_form["placeholder7"]' type="file">
                                         </li>
                                         <button class="btn btn-md btn-primary bt-popup">@Html.Raw(utm_content.popup3_form["button"])</button>
                                         <li>
@@ -641,6 +611,31 @@
     <script>var telerTrackerWidgetId="43beb69e-472b-4b86-9638-4ae8d0963099"; var telerTrackerDomain="tractorzavod.phonet.com.ua";</script> 
     <script src="//tractorzavod.phonet.com.ua/public/widget/call-tracker/lib.js"></script>
     @* <!-- END CallTracker CODE--> *@
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '199092117418858');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=199092117418858&ev=PageView&noscript=1"
+    /></noscript>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-87176753-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
     <script>
                     /**
             * module       WOW Animation
