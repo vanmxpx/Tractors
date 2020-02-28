@@ -8,9 +8,8 @@
     {
       "outputFileName": "wwwroot/js/site.min.js",
       "inputFiles": [
-        "wwwroot/js/site.js",
-        "wwwroot/js/core.min.js",
-        "wwwroot/js/jqBootstrapValidation.js"
+        "wwwroot/js/jqBootstrapValidation.js",
+        "wwwroot/js/site.js"
       ],
       "minify": {
         "enabled": true,

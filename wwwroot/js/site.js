@@ -555,6 +555,7 @@ $('.bt-popup').on('click', function () {
     ga('send', 'event', 'click', 'button'); fbq('track', 'Lead');
 });
 
+;
 (function($) {
     $.Lazy('google-map', function(element, response) {
         map = new google.maps.Map(document.getElementById('google-map'), {
@@ -571,9 +572,9 @@ $('.bt-popup').on('click', function () {
     });
 })(jQuery);
 
+;
 $(function() {
     $('.lazy').Lazy();
     $('#google-map').Lazy();
     $("iframe[data-src]").Lazy();
-    
 });
