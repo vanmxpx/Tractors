@@ -30,15 +30,6 @@ setTimeout(function () {
 setTimeout(function () {
     $(".ks").fadeIn(200);;
 }, 5000);
-
-/*setTimeout (function() {
-   $(".vd").fadeOut(400);
-    $(".lc").fadeIn(400);
-},680);
-setTimeout (function() {
-   $(".lc").fadeOut(400);
-    $(".ks").fadeIn(400);
-},680);*/
 setInterval(function () {
     setTimeout(function () {
         $(".ks").fadeOut(200);;
@@ -58,15 +49,6 @@ setInterval(function () {
     setTimeout(function () {
         $(".ks").fadeIn(200);;
     }, 6000);
-
-    /*setTimeout (function() {
-       $(".vd").fadeOut(400);
-        $(".lc").fadeIn(400);
-    },680);
-    setTimeout (function() {
-       $(".lc").fadeOut(400);
-        $(".ks").fadeIn(400);
-    },680);*/
 }, 6000);
 
 
@@ -146,27 +128,8 @@ function isIE() {
         $(document).ready(function () {
             $().UItoTop({
                 easingType: 'easeOutQuart',
-                containerClass: 'ui-to-top fa fa-caret-up'
+                containerClass: 'ui-to-top'
             });
-        });
-    }
-})(jQuery);
-
-/**
- * @module       Responsive Tabs
- * @description  Enables Easy Responsive Tabs Plugin
- */
-;
-(function ($) {
-    var o = $('.responsive-tabs');
-    if (o.length > 0) {
-        $(document).ready(function () {
-            o.each(function () {
-                var $this = $(this);
-                $this.easyResponsiveTabs({
-                    type: $this.attr("data-type") === "accordion" ? "accordion" : "default"
-                });
-            })
         });
     }
 })(jQuery);
@@ -411,103 +374,12 @@ $(document).ready(function () {
         },
     });
 
-    function Unloader() {
-
-        var o = this;
-
-        this.unload = function (evt) {
-            var message = "Вы уверены, что хотите покинуть страницу оформления заказа?";
-            if (typeof evt == "undefined") {
-                evt = window.event;
-            }
-            if (evt) {
-                evt.returnValue = message;
-            }
-            return message;
-        }
-
-        this.resetUnload = function () {
-            $(window).off('beforeunload', o.unload);
-
-            setTimeout(function () {
-                $(window).on('beforeunload', o.unload);
-            }, 2000);
-        }
-
-        this.init = function () {
-
-            $(window).on('beforeunload', o.unload);
-
-            $('a').on('click', function () { o.resetUnload });
-            $(document).on('submit', 'form', function () { o.resetUnload });
-            $(document).on('keydown', function (event) {
-                if ((event.ctrlKey && event.keyCode == 116) || event.keyCode == 116) {
-                    o.resetUnload;
-                }
-            });
-        }
-        this.init();
-    }
-
     /**
      * This javascript file checks for the brower/browser tab action.
      * It is based on the file menstioned by Daniel Melo.
      * Reference: http://stackoverflow.com/questions/1921941/close-kill-the-session-when-the-browser-or-tab-is-closed
      */
-    var validNavigation = false;
 
-    function wireUpEvents() {
-        /**
-         * For a list of events that triggers onbeforeunload on IE
-         * check http://msdn.microsoft.com/en-us/library/ms536907(VS.85).aspx
-         *
-         * onbeforeunload for IE and chrome
-         * check http://stackoverflow.com/questions/1802930/setting-onbeforeunload-on-body-element-in-chrome-and-ie-using-jquery
-         */
-        var dont_confirm_leave = 0; //set dont_confirm_leave to 1 when you want the user to be able to leave without confirmation
-        var leave_message = 'You sure you want to leave?'
-        function goodbye(e) {
-            if (!validNavigation) {
-                if (dont_confirm_leave !== 1) {
-                    if (!e) e = window.event;
-                    //e.cancelBubble is supported by IE - this will kill the bubbling process.
-                    e.cancelBubble = true;
-                    e.returnValue = leave_message;
-                    //e.stopPropagation works in Firefox.
-                    if (e.stopPropagation) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                    }
-                    //return works for Chrome and Safari
-                    return leave_message;
-                }
-            }
-        }
-        window.onbeforeunload = goodbye;
-
-        // Attach the event keypress to exclude the F5 refresh
-        $(document).bind('keypress', function (e) {
-            if (e.keyCode == 116) {
-                validNavigation = true;
-            }
-        });
-
-        // Attach the event click for all links in the page
-        $("a").bind("click", function () {
-            validNavigation = true;
-        });
-
-        // Attach the event submit for all forms in the page
-        $("form").bind("submit", function () {
-            validNavigation = true;
-        });
-
-        // Attach the event click for all inputs in the page
-        $("input[type=submit]").bind("click", function () {
-            validNavigation = true;
-        });
-
-    }
 
     var checkCloseX = 0;
     $(document).mousemove(function (e) {
@@ -699,3 +571,25 @@ $(function() {
                 );
             });
         })
+
+var slideIndex = 0;
+function showSlides(n) {
+    if(slideIndex === n) { 
+        return
+    }
+
+    slideIndex = n;
+
+    var i;
+    var slides = $("#tractors").find("#carousel-example-generic .item");
+    var dots = document.getElementsByClassName("carousel-indicator-dot");
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].className += " active";
+}

@@ -16,7 +16,7 @@ namespace Tractors
         public static void Main(string[] args)
         {
 
-            ProcessDirectory("wwwroot/images");
+            // ProcessDirectory("wwwroot/images");
             // CreateHostBuilder(args).Build().Run();
         }
 
