@@ -16,8 +16,8 @@ namespace Tractors
         public static void Main(string[] args)
         {
 
-            //ProcessDirectory("images");
-            CreateHostBuilder(args).Build().Run();
+            ProcessDirectory("wwwroot/images");
+            // CreateHostBuilder(args).Build().Run();
         }
 
         public static void ProcessFile(string fileName)
@@ -27,7 +27,7 @@ namespace Tractors
             Console.WriteLine("Bytes before: " + file.Length);
 
             var optimizer = new ImageOptimizer();
-            optimizer.LosslessCompress(file);
+            optimizer.Compress(file);
 
             file.Refresh();
             Console.WriteLine("Bytes after:  " + file.Length);

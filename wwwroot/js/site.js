@@ -558,6 +558,7 @@ $('.bt-popup').on('click', function () {
 ;
 (function($) {
     $.Lazy('google-map', function(element, response) {
+        console.log(document.getElementById('google-map'));
         map = new google.maps.Map(document.getElementById('google-map'), {
             center: { lat: 48.409050, lng: 34.998631 },
             zoom: 17
@@ -578,3 +579,123 @@ $(function() {
     $('#google-map').Lazy();
     $("iframe[data-src]").Lazy();
 });
+
+        /* Кнопки КУПИТЬ и ЦЕНА В КРЕДИТ */
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return false;
+        }
+
+        function createCookie(name, value, days) {
+            var expires = '';
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                var expires = '; expires=' + date.toUTCString();
+            }
+            document.cookie = name + '=' + value + expires + '; path=/';
+        }
+
+        function eraseCookie(name) {
+            createCookie(name, '', -1);
+        }
+
+        var c_name = '__utmz';
+        var days = 60
+        if (getQueryVariable('utm_source') != '') {
+            let utm_source = getQueryVariable('utm_source') || '';
+            createCookie('__utm_source', utm_source, days);
+
+            let utm_medium = getQueryVariable('utm_medium') || '';
+            createCookie('__utm_medium', utm_medium, days);
+
+            let utm_term = getQueryVariable('utm_term') || '';
+            createCookie('__utm_term', utm_term, days);
+
+            let utm_campaign = getQueryVariable('utm_campaign') || '';
+            createCookie('__utm_campaign', utm_campaign, days);
+
+            let utm_content = getQueryVariable('utm_content') || '';
+            createCookie('__utm_content', utm_content, days);
+        }
+
+        let yclid = getQueryVariable('yclid') || '';
+        createCookie('__yclid', yclid, days);
+
+        let gclid = getQueryVariable('gclid') || '';
+        createCookie('__gclid', gclid, days);
+
+        createCookie("__utm_url", window.location.href.split("?")[0], days);
+
+        if (document.referrer.indexOf(location.protocol + '//' + location.host) === 0) {
+            createCookie('__utm_referrer', document.referrer, days);
+        }
+
+        function getCookieObject() {
+            let t = {};
+            document.cookie.split(';').filter(r => {
+                r = r.trim().split('=');
+                t[r[0]] = r[1];
+            });
+            return t;
+        }
+        $(document).ready(function() {
+            let cookie = getCookieObject();
+            $('#form-order').submit(function() {
+                let form = $(this);
+                let data = {
+                    "contact": {
+                        "name": form.find('[name="name"]').val(),
+                        "phone": {
+                            "action": "add",
+                            "value": form.find('[name="phone"]').val()
+                        },
+                        "email": {
+                            "action": "add",
+                            "value": form.find('[name="email"]').val()
+                        },
+                        "responsible": {
+                            "type": "linear",
+                            "value": "Отдел продаж"
+                        }
+                    },
+                    "lead": {
+                        "name": "Заявка с сайта tdtz.in.ua",
+                        "responsible": {
+                            "type": "entity",
+                            "entity": "contact",
+                            "action": "update"
+                        },
+                        "fields": {
+                            "Форма": form.find('[name="abcid"]').val(),
+                            "utm_source": cookie.__utm_source,
+                            "utm_medium": cookie.__utm_medium,
+                            "utm_campaign": cookie.__utm_campaign,
+                            "utm_content": cookie.__utm_content,
+                            "utm_term": cookie.__utm_term,
+                            "Gclid": cookie.__gclid,
+                            "Yclid": cookie.__yclid,
+                            "GAclientID": cookie._ga,
+                            "Страница обращения": cookie.__utm_url,
+                            "Коментар": ""
+                        },
+                        "status_id": "10735228"
+                    },
+                };
+                $.post(
+                    'https://blackbox.bpmcenter.pro/api/33278e359d2ccdf04f7cfc90c589b61c/hook',
+                    data,
+                    (res) => {
+                        console.log(res);
+                    }
+                );
+            });
+        })
