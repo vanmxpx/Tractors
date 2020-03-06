@@ -2403,11 +2403,16 @@ screen and (max-height: 300px) {
 
 
 .icon-primary-variant-1 {
-    width: 152px;
+    width: 136px;
 }
 
 .icon-primary-variant-2 {
-    width: 167px;
+    background: white;
+    border: 2px solid;
+    border-radius: 3px;
+    height: 96px;
+    padding: 10px 10px 10px 10px;
+    width: 211px;
 }
 
 .well-xl1 {
